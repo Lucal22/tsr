@@ -5,7 +5,7 @@ import P from 'prop-types';
 export default function HomePage({ theme = 'light' }) {
   return (
     <Styled.Container>
-      <h1>{theme ? 'Olá mundo' : ''}</h1>
+      <h1>{theme ? 'building tsr' : ''}</h1>
     </Styled.Container>
   );
 }
