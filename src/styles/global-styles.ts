@@ -1,21 +1,28 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
-* {
+${({ theme }) => css`
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-  html,
-body {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+  html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+  }
 
+  body {
+    font-family: ${theme.fonts.defaultFont};
+    font-size: 1.6rem;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
 
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+`}
 `;

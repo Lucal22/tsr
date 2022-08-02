@@ -1,13 +1,10 @@
 import React from 'react';
 import * as Styled from './styles';
-import P from 'prop-types';
 
-export default function HomePage({ theme = 'light' }) {
+export default function HomePage() {
   return (
     <Styled.Container>
-      <h1>{theme ? 'building tsr' : ''}</h1>
+      <h1>building tsr</h1>
     </Styled.Container>
   );
 }
-
-HomePage.propTypes = { theme: P.node.isRequired };
