@@ -1,3 +1,3 @@
-## Nextjs + TypeScript + Styled Components
+## TSR
 
-Repository for a default Nextjs, TypeScript and Styled Components project. Also have prettier, eslint, editorconfig, graphql, jest and testing-library configurated.
+A Final Fantasy XIV fansite
