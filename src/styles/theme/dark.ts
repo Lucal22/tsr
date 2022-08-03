@@ -11,10 +11,11 @@ export const theme = {
     purple: 'rgb(150, 73, 242)',
   },
   spaces: {
-    xSmall: '0.6rem',
-    small: '1rem',
-    medium: '3rem',
-    large: '5rem',
+    xSmall: '0.8rem',
+    small: '1.6rem',
+    medium: '2rem',
+    large: '3.2rem',
+    xLarge: '4rem',
   },
   fonts: {
     style: {
@@ -22,10 +23,10 @@ export const theme = {
       poppinsFony: "'Poppins',serif",
     },
     size: {
-      xSmall: '1rem',
-      small: '1.4rem',
-      medium: '1.6rem',
-      large: '2rem',
+      xSmall: '0.8rem',
+      small: '1.6rem',
+      medium: '2.4rem',
+      large: '3.2rem',
     },
   },
   background: {

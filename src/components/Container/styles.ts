@@ -8,16 +8,16 @@ type ContainerProps = {
 
 const containerWidth = {
   xSmall: (theme: DefaultTheme) => css`
-    width: ${theme.screen.size.xSmall};
+    max-width: ${theme.screen.size.xSmall};
   `,
   small: (theme: DefaultTheme) => css`
-    width: ${theme.screen.size.small};
+    max-width: ${theme.screen.size.small};
   `,
   medium: (theme: DefaultTheme) => css`
-    width: ${theme.screen.size.medium};
+    max-width: ${theme.screen.size.medium};
   `,
   large: (theme: DefaultTheme) => css`
-    width: ${theme.screen.size.large};
+    max-width: ${theme.screen.size.large};
   `,
 };
 
