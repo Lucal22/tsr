@@ -1,8 +1,7 @@
 export const theme = {
   colors: {
-    primary: '#000000',
-    secondary: '#ffffff',
-    logo: '',
+    primary: '#ffffff',
+    secondary: '#000000',
     white: '#ffffff',
     black: '#000000',
     red: 'red',
@@ -30,20 +29,11 @@ export const theme = {
     },
   },
   background: {
-    primary: '#f2f2f2',
-    secondary: '#ffffff',
+    primary: '#1e1e26',
+    secondary: '#131317',
     details: '#131317',
   },
   shadows: {
     posts: '0.2rem 0.2rem 0.5rem',
-  },
-  screen: {
-    size: {
-      xSmall: '32rem',
-      small: '48.1rem',
-      medium: '77rem',
-      big: '128rem',
-      large: '140rem',
-    },
   },
 };

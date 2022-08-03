@@ -1,13 +1,19 @@
 import React from 'react';
+import Container from '../Container';
+import Heading from '../Heading';
 import * as Styled from './styles';
-import P from 'prop-types';
+//import Switch from 'react-switch';
 
-export default function Header({ theme = 'light' }) {
+export type HeaderProps = {
+  children: React.ReactNode;
+};
+
+export default function Header() {
   return (
-    <Styled.Container>
-      <h1>{theme ? 'Olá mundo' : ''}</h1>
-    </Styled.Container>
+    <Styled.Header>
+      <Container width={'large'} height={'10rem'}>
+        <Heading combo={true}>Building tsr</Heading>
+      </Container>
+    </Styled.Header>
   );
 }
-
-Header.propTypes = { theme: P.node.isRequired };

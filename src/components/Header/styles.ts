@@ -1,7 +1,12 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+export const Header = styled.header`
   ${({ theme }) => css`
-    color: red;
+    color: ${theme.colors.lightBlue};
+    background-color: ${theme.background.details};
   `}
+`;
+
+export const Nav = styled.nav`
+  ${({ theme }) => css``}
 `;

@@ -37,13 +37,4 @@ export const theme = {
   shadows: {
     posts: '0.2rem 0.2rem 0.5rem',
   },
-  screen: {
-    size: {
-      xSmall: '32rem',
-      small: '48.1rem',
-      medium: '77rem',
-      big: '128rem',
-      large: '140rem',
-    },
-  },
 };
