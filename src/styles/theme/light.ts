@@ -1,12 +1,14 @@
-export const theme = {
+const theme = {
+  title: 'light',
   colors: {
     primary: '#000000',
     secondary: '#ffffff',
-    logo: '',
+    logo: '#27d1d1',
     white: '#ffffff',
     black: '#000000',
     red: 'red',
     blue: 'blue',
+    slate: 'rgb(203 213 225)',
     lightBlue: 'rgb(135, 206, 250)',
     green: 'rgb(15, 237, 109)',
     purple: 'rgb(150, 73, 242)',
@@ -30,12 +32,22 @@ export const theme = {
       large: '3.2rem',
     },
   },
+  shadows: {
+    posts: '0.2rem 0.2rem 0.5rem',
+  },
+  screen: {
+    size: {
+      xSmall: '32rem',
+      small: '48.1rem',
+      medium: '77rem',
+      large: '128rem',
+    },
+  },
   background: {
     primary: '#f2f2f2',
     secondary: '#ffffff',
     details: '#131317',
   },
-  shadows: {
-    posts: '0.2rem 0.2rem 0.5rem',
-  },
 };
+
+export default theme;

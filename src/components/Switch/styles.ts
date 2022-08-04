@@ -1,7 +1,10 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+export const Button = styled.button`
   ${({ theme }) => css`
-    color: red;
+    color: ${theme.colors.white};
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
   `}
 `;

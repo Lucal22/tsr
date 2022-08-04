@@ -2,8 +2,10 @@ import React from 'react';
 import * as Styled from './styles';
 import list from './mock';
 import Links from '../Links';
+import SwitchTheme from '../Switch';
+import { HeaderProps } from '../Header';
 
-export default function Nav() {
+export default function Nav({ handleTheme }: HeaderProps) {
   return (
     <Styled.Nav>
       <Styled.Flex text="medium" position="top">
@@ -15,6 +17,7 @@ export default function Nav() {
           );
         })}
         <span>campo de busca</span>
+        <SwitchTheme handleTheme={handleTheme} />
       </Styled.Flex>
       <Styled.Flex text="small" position="bottom">
         {list[1].map((item) => {

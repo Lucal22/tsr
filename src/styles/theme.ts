@@ -2,7 +2,7 @@ export const theme = {
   colors: {
     primary: '#000000',
     secondary: '#ffffff',
-    logo: '#27d1d1', //3bb4b4
+    logo: '#27d1d1',
     white: '#ffffff',
     black: '#000000',
     red: 'red',
