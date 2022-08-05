@@ -5,7 +5,6 @@ import { GlobalStyles } from '../styles/global-styles';
 import light from '../styles/theme/light';
 import dark from '../styles/theme/dark';
 import { useEffect, useState } from 'react';
-//import useLocalTheme from '../utils/useLocalTheme';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [theme, setTheme] = useState(light);

@@ -2,8 +2,9 @@ import React from 'react';
 import * as Styled from './styles';
 import list from './mock';
 import Links from '../Links';
-import SwitchTheme from '../Switch';
+import Switch from '../Switch';
 import { HeaderProps } from '../Header';
+import Menu from '../Menu';
 
 export default function Nav({ handleTheme }: HeaderProps) {
   return (
@@ -16,8 +17,14 @@ export default function Nav({ handleTheme }: HeaderProps) {
             </Links>
           );
         })}
-        <span>campo de busca</span>
-        <SwitchTheme handleTheme={handleTheme} />
+        <Menu />
+        <form>
+          <Styled.Input
+            type="text"
+            placeholder="Pesquise sobre algum post"
+          ></Styled.Input>
+        </form>
+        <Switch handleTheme={handleTheme} />
       </Styled.Flex>
       <Styled.Flex text="small" position="bottom">
         {list[1].map((item) => {

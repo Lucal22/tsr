@@ -4,7 +4,7 @@ import { SunDim, Moon } from 'phosphor-react';
 import { HeaderProps } from '../Header';
 import { ThemeContext } from 'styled-components';
 
-export default function SwitchTheme({ handleTheme }: HeaderProps) {
+export default function Switch({ handleTheme }: HeaderProps) {
   const { title } = useContext(ThemeContext);
   return (
     <Styled.Button aria-label="Botão do tema" onClick={handleTheme}>

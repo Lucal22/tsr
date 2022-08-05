@@ -4,7 +4,13 @@ import Nav from './index';
 
 describe('<Nav />', () => {
   it('should render', () => {
-    renderTheme(<Nav />);
+    renderTheme(
+      <Nav
+        handleTheme={function (): void {
+          throw new Error('Function not implemented.');
+        }}
+      />,
+    );
     expect(screen.getByRole('navigation')).toBeInTheDocument;
   });
 });

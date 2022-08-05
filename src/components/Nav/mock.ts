@@ -11,7 +11,7 @@ const list = [
       newTab: false,
     },
     {
-      children: 'Mapa do site',
+      children: 'Mapa',
       link: '/map',
       newTab: true,
     },
