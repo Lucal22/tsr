@@ -2,21 +2,10 @@ import styled, { css } from 'styled-components';
 
 export const Header = styled.header`
   ${({ theme }) => css`
-    color: ${theme.colors.lightBlue};
+    color: ${theme.colors.primary};
     background-color: ${theme.background.details};
-  `}
-`;
-
-export const Nav = styled.nav`
-  ${({ theme }) => css`
-    height: 100%;
-    gap: ${theme.spaces.large};
-    display: flex;
-    align-items: center;
-    p {
-      width: 100%;
-      display: flex;
-    }
+    width: 100%;
+    position: fixed;
   `}
 `;
 

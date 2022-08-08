@@ -13,6 +13,7 @@ const theme = {
     lightBlue: 'rgb(135, 206, 250)',
     green: 'rgb(15, 237, 109)',
     purple: 'rgb(150, 73, 242)',
+    menu: 'rgb(203 213 225)',
   },
   spaces: {
     xSmall: '0.8rem',

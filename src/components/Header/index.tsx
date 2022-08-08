@@ -13,7 +13,7 @@ export type HeaderProps = {
 export default function Header({ handleTheme }: HeaderProps) {
   return (
     <Styled.Header>
-      <Container width={'large'} position="relative">
+      <Container width={'large'}>
         <Styled.Flex>
           <Styled.Logo href="/">
             <Image src={img.logo} width="332px" height="78px" />

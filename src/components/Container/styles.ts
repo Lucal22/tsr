@@ -3,7 +3,6 @@ import styled, { css, DefaultTheme } from 'styled-components';
 type ContainerProps = {
   width: 'xSmall' | 'small' | 'medium' | 'large';
   height: string;
-  position: string;
 };
 
 const containerWidth = {
@@ -22,8 +21,7 @@ const containerWidth = {
 };
 
 export const Container = styled.div<ContainerProps>`
-  ${({ theme, width, height, position }) => css`
-    position: ${position};
+  ${({ theme, width, height }) => css`
     height: ${height};
     margin: 0 auto;
     ${containerWidth[width](theme)}

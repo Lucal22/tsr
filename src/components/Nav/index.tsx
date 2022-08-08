@@ -17,7 +17,6 @@ export default function Nav({ handleTheme }: HeaderProps) {
             </Links>
           );
         })}
-        <Menu />
         <form>
           <Styled.Input
             type="text"
@@ -35,6 +34,7 @@ export default function Nav({ handleTheme }: HeaderProps) {
           );
         })}
       </Styled.Flex>
+      <Menu />
     </Styled.Nav>
   );
 }
