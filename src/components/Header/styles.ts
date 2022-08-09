@@ -6,6 +6,7 @@ export const Header = styled.header`
     background-color: ${theme.background.details};
     width: 100%;
     position: fixed;
+    z-index: 99;
   `}
 `;
 
