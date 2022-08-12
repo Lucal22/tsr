@@ -2,7 +2,10 @@ import React from 'react';
 import AdBanner from '../../components/AdBanner';
 import Container from '../../components/Container';
 import Grid from '../../components/Grid';
+import MainPost from '../../components/MainPost';
 import * as Styled from './styles';
+
+import { img } from '../../assets';
 
 export default function HomePage() {
   return (
@@ -11,10 +14,14 @@ export default function HomePage() {
       <Container width={'large'}>
         <Styled.Content>
           <Grid>
-            <div>
-              {' '}
-              <h1>Olá</h1>
-            </div>
+            <Styled.Posts>
+              <MainPost
+                image={img.main}
+                titleSlug={'lul'}
+                categorySlug={'endwalker'}
+                title={'Teste de heading'}
+              />
+            </Styled.Posts>
             <div>
               {' '}
               <h1>Hello</h1>

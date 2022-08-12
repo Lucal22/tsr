@@ -13,3 +13,10 @@ export const Content = styled.div`
   width: 100%;
   height: 100%;
 `;
+
+export const Posts = styled.div`
+  padding: 15px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
