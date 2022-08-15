@@ -5,10 +5,11 @@ export type PostCardProps = {
   children: React.ReactNode;
 };
 
-export default function PostCard({ children }: PostCardProps) {
+export default function PostCard() {
   return (
     <Styled.Container>
-      <h1>{children}</h1>
+      <Styled.Thumbnail>Hello world</Styled.Thumbnail>
+      <Styled.CardContent>Olá mundo</Styled.CardContent>
     </Styled.Container>
   );
 }

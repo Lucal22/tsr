@@ -8,6 +8,7 @@ export type MainPostProps = {
   title: string;
   titleSlug: string;
   categorySlug: string;
+  category: string;
 };
 
 export default function MainPost({
@@ -15,16 +16,18 @@ export default function MainPost({
   titleSlug,
   categorySlug,
   title,
+  category,
 }: MainPostProps) {
   return (
     <Styled.Container>
       <Links link={`/${categorySlug}/${titleSlug}`}>
         <Image src={image} width={860} height={486} />
       </Links>
+      <Styled.Category>
+        <Links link={`/${categorySlug}`}>{category}</Links>
+      </Styled.Category>
       <Styled.Title>
-        <h2>
-          <Links link={`/${categorySlug}/${titleSlug}`}>{title}</Links>
-        </h2>
+        <Links link={`/${categorySlug}/${titleSlug}`}>{title}</Links>
       </Styled.Title>
     </Styled.Container>
   );

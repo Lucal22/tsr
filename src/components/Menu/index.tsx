@@ -13,19 +13,19 @@ export type MenuProps = {
 };
 
 export default function Menu() {
-  const [openMenu, setOpenMenu] = useState(false);
+  const [menu, setMenu] = useState(false);
   return (
     <>
       <Styled.Button>
         <List
           aria-label="Abre e fecha Menu"
           onClick={() => {
-            setOpenMenu(!openMenu);
+            setMenu(!menu);
           }}
         />
       </Styled.Button>
       <Styled.Menu
-        openMenu={openMenu}
+        openMenu={menu}
         as={motion.div}
         whileInView={{ x: [-200, 0] }}
         transition={{ duration: 0.85, ease: 'easeOut' }}

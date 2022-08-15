@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.article`
   ${({ theme }) => css`
     width: 100%;
     height: 100%;
@@ -12,8 +12,11 @@ export const Container = styled.div`
   `}
 `;
 
-export const Title = styled.div`
+export const Category = styled.span`
   ${({ theme }) => css`
-    text-align: center;
+    color: ${theme.colors.purple};
+    font-size: ${theme.fonts.size.small};
   `}
 `;
+
+export const Title = styled.h2``;

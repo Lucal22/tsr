@@ -6,6 +6,7 @@ import MainPost from '../../components/MainPost';
 import * as Styled from './styles';
 
 import { img } from '../../assets';
+import PostCard from '../../components/PostCard';
 
 export default function HomePage() {
   return (
@@ -13,14 +14,27 @@ export default function HomePage() {
       <AdBanner />
       <Container width={'large'}>
         <Styled.Content>
+          <Styled.Flex>
+            <MainPost
+              image={img.main}
+              titleSlug={'lul'}
+              categorySlug={'endwalker'}
+              title={'Teste de heading'}
+              category={'Endwalker'}
+            />
+            <MainPost
+              image={img.main}
+              titleSlug={'lul'}
+              categorySlug={'endwalker'}
+              title={'Teste de heading'}
+              category={'Endwalker'}
+            />
+          </Styled.Flex>
           <Grid>
             <Styled.Posts>
-              <MainPost
-                image={img.main}
-                titleSlug={'lul'}
-                categorySlug={'endwalker'}
-                title={'Teste de heading'}
-              />
+              <PostCard />
+              <PostCard />
+              <PostCard />
             </Styled.Posts>
             <div>
               {' '}

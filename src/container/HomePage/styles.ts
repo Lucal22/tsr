@@ -18,5 +18,11 @@ export const Posts = styled.div`
   padding: 15px 15px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+`;
+
+export const Flex = styled.div`
+  padding: 0 15px;
+  display: flex;
+  gap: 30px;
+  margin-bottom: 100px;
 `;

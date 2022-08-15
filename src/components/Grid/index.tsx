@@ -6,5 +6,9 @@ export type GridProps = {
 };
 
 export default function Grid({ children }: GridProps) {
-  return <Styled.Grid>{children}</Styled.Grid>;
+  return (
+    <Styled.Articles>
+      <Styled.Grid>{children}</Styled.Grid>
+    </Styled.Articles>
+  );
 }
