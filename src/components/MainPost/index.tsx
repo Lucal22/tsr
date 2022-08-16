@@ -4,7 +4,7 @@ import Image, { StaticImageData } from 'next/image';
 import Links from '../Links';
 
 export type MainPostProps = {
-  image: StaticImageData;
+  image: StaticImageData | string;
   title: string;
   titleSlug: string;
   categorySlug: string;

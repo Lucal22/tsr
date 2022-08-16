@@ -5,10 +5,14 @@ import Grid from '../../components/Grid';
 import MainPost from '../../components/MainPost';
 import * as Styled from './styles';
 
-import { img } from '../../assets';
 import PostCard from '../../components/PostCard';
+import { HomeProps } from '../../pages';
 
-export default function HomePage() {
+export default function HomePage({ posts }: HomeProps) {
+  console.log(posts);
+  const lastPost = posts.data[0].attributes;
+  //const lastPost2 = posts.data[1].attributes;
+
   return (
     <Styled.Container>
       <AdBanner />
@@ -16,18 +20,18 @@ export default function HomePage() {
         <Styled.Content>
           <Styled.Flex>
             <MainPost
-              image={img.main}
-              titleSlug={'lul'}
-              categorySlug={'endwalker'}
-              title={'Teste de heading'}
-              category={'Endwalker'}
+              image={lastPost.image.data.attributes.formats.medium.url}
+              titleSlug={lastPost.slug}
+              categorySlug={lastPost.category.data.attributes.slug}
+              title={lastPost.title}
+              category={lastPost.category.data.attributes.name}
             />
             <MainPost
-              image={img.main}
-              titleSlug={'lul'}
-              categorySlug={'endwalker'}
-              title={'Teste de heading'}
-              category={'Endwalker'}
+              image={lastPost.image.data.attributes.formats.medium.url}
+              titleSlug={lastPost.slug}
+              categorySlug={lastPost.category.data.attributes.slug}
+              title={lastPost.title}
+              category={lastPost.category.data.attributes.name}
             />
           </Styled.Flex>
           <Grid>
