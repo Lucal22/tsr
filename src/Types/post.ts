@@ -46,7 +46,13 @@ export type PostCategory = {
       name: string;
       createdAt: string;
       updatedAt: string;
-      slug: string;
+      slug:
+        | 'endwalker'
+        | 'shadowbringers'
+        | 'stormblood'
+        | 'heavensward'
+        | 'arr'
+        | 'geral';
     };
   };
 };
@@ -109,13 +115,14 @@ export type PostData = {
   image: PostCover;
   carousels: PostCover; //corrigir
 };
+
+export type PostObject = {
+  id: PostID;
+  attributes: PostData;
+};
+
 export type FullPost = {
-  data: [
-    {
-      id: PostID;
-      attributes: PostData;
-    },
-  ];
+  data: Array<PostObject>;
   meta: object;
 };
 

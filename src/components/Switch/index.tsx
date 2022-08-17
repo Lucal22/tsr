@@ -9,9 +9,9 @@ export default function Switch({ handleTheme }: HeaderProps) {
   return (
     <Styled.Button aria-label="Botão do tema" onClick={handleTheme}>
       {title === 'light' ? (
-        <SunDim aria-label="Mudar para tema escuro" size={25} />
+        <Moon aria-label="Mudar para tema escuro" size={25} />
       ) : (
-        <Moon aria-label="Mudar para tema claro" size={25} />
+        <SunDim aria-label="Mudar para tema claro" size={25} />
       )}
     </Styled.Button>
   );

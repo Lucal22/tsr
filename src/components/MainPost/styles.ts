@@ -1,4 +1,6 @@
 import styled, { css } from 'styled-components';
+import { PostStyleProps } from '../../Types/style';
+import { stylesContainer } from '../StyleFunctions/hover';
 
 export const Container = styled.article`
   ${({ theme }) => css`
@@ -19,4 +21,8 @@ export const Category = styled.span`
   `}
 `;
 
-export const Title = styled.h2``;
+export const Title = styled.h2<PostStyleProps>`
+  ${({ theme, categorySlug }) => css`
+    ${stylesContainer[categorySlug](theme)}
+  `}
+`;

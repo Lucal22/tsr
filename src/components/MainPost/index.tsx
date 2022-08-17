@@ -1,13 +1,13 @@
 import React from 'react';
 import * as Styled from './styles';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Links from '../Links';
+import { PostStyleProps } from '../../Types/style';
 
-export type MainPostProps = {
-  image: StaticImageData | string;
+export type MainPostProps = PostStyleProps & {
+  image: string;
   title: string;
   titleSlug: string;
-  categorySlug: string;
   category: string;
 };
 
@@ -21,12 +21,12 @@ export default function MainPost({
   return (
     <Styled.Container>
       <Links link={`/${categorySlug}/${titleSlug}`}>
-        <Image src={image} width={860} height={486} />
+        <Image src={image} width={570} height={320} />
       </Links>
       <Styled.Category>
         <Links link={`/${categorySlug}`}>{category}</Links>
       </Styled.Category>
-      <Styled.Title>
+      <Styled.Title categorySlug={categorySlug}>
         <Links link={`/${categorySlug}/${titleSlug}`}>{title}</Links>
       </Styled.Title>
     </Styled.Container>

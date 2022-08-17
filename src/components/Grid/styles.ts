@@ -8,7 +8,6 @@ export const Grid = styled.div`
   ${({ theme }) => css`
     display: grid;
     grid-template-columns: 3fr 1fr;
-    background-color: ${theme.background.secondary};
     gap: ${theme.spaces.xLarge};
   `}
 `;

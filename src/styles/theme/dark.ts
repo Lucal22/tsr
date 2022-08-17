@@ -7,7 +7,7 @@ const theme = {
     white: '#ffffff',
     black: '#000000',
     red: 'red',
-    blue: 'blue',
+    blue: 'rgb(59 130 246)',
     slate: 'rgb(203 213 225)',
     slate500: 'rgb(100 116 139)',
     lightBlue: 'rgb(135, 206, 250)',
@@ -30,6 +30,7 @@ const theme = {
     size: {
       xSmall: '0.8rem',
       small: '1.6rem',
+      heading: '1.8rem',
       medium: '2.4rem',
       large: '3.2rem',
     },
