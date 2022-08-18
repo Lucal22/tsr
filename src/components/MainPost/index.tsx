@@ -23,7 +23,7 @@ export default function MainPost({
       <Links link={`/${categorySlug}/${titleSlug}`}>
         <Image src={image} width={570} height={320} />
       </Links>
-      <Styled.Category>
+      <Styled.Category categorySlug={categorySlug}>
         <Links link={`/${categorySlug}`}>{category}</Links>
       </Styled.Category>
       <Styled.Title categorySlug={categorySlug}>

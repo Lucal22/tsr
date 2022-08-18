@@ -6,4 +6,5 @@ export type PostStyleProps = {
     | 'heavensward'
     | 'arr'
     | 'geral';
+  font?: 'xSmall' | 'small';
 };

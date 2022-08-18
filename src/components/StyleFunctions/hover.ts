@@ -1,6 +1,6 @@
 import { css, DefaultTheme } from 'styled-components';
 
-export const stylesContainer = {
+export const Hover = {
   endwalker: (theme: DefaultTheme) => css`
     &:hover {
       color: ${theme.colors.blue};

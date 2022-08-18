@@ -9,6 +9,7 @@ import PostCard from '../../components/PostCard';
 import { HomeProps } from '../../pages';
 
 export default function HomePage({ posts }: HomeProps) {
+  const postArray = posts.data;
   const lastPost = posts.data[0].attributes;
   const lastPost2 = posts.data[1].attributes;
 
@@ -35,20 +36,24 @@ export default function HomePage({ posts }: HomeProps) {
           </Styled.Flex>
           <Grid>
             <Styled.Posts>
-              <PostCard
-                thumbnail={lastPost.image.data.attributes.formats.small.url}
-                title={lastPost.title}
-                categorySlug={lastPost.category.data.attributes.slug}
-                slug={lastPost.slug}
-                category={lastPost.category.data.attributes.name}
-              />
-              <PostCard
-                thumbnail={lastPost.image.data.attributes.formats.thumbnail.url}
-                title={lastPost.title}
-                categorySlug={lastPost.category.data.attributes.slug}
-                slug={lastPost.slug}
-                category={lastPost.category.data.attributes.name}
-              />
+              {postArray.map((post) => {
+                return (
+                  <PostCard
+                    key={post.id}
+                    thumbnail={
+                      post.attributes.image.data.attributes.formats.small.url
+                    }
+                    title={post.attributes.title}
+                    categorySlug={post.attributes.category.data.attributes.slug}
+                    slug={post.attributes.slug}
+                    category={post.attributes.category.data.attributes.name}
+                    author={post.attributes.author.data.attributes.name}
+                    authorSlug={post.attributes.author.data.attributes.slug}
+                    date={post.attributes.publishedAt}
+                    description={post.attributes.description}
+                  />
+                );
+              })}
             </Styled.Posts>
             <div>
               {' '}

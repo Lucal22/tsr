@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { PostStyleProps } from '../../Types/style';
-import { stylesContainer } from '../StyleFunctions/hover';
+import { Colors } from '../StyleFunctions/color';
+import { Hover } from '../StyleFunctions/hover';
 
 export const Container = styled.article`
   ${({ theme }) => css`
@@ -14,15 +15,18 @@ export const Container = styled.article`
   `}
 `;
 
-export const Category = styled.span`
-  ${({ theme }) => css`
+export const Category = styled.span<PostStyleProps>`
+  ${({ theme, categorySlug }) => css`
     color: ${theme.colors.purple};
     font-size: ${theme.fonts.size.small};
+    ${Colors[categorySlug](theme)}
   `}
 `;
 
 export const Title = styled.h2<PostStyleProps>`
   ${({ theme, categorySlug }) => css`
-    ${stylesContainer[categorySlug](theme)}
+    a {
+      ${Hover[categorySlug](theme)}
+    }
   `}
 `;
