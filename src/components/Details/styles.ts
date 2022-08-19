@@ -12,5 +12,8 @@ export const Details = styled.p<PostStyleProps>`
     a {
       ${Colors[categorySlug](theme)}
     }
+    @media (max-width: ${theme.screen.size.xSmall}) {
+      display: none;
+    }
   `}
 `;

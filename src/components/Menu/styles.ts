@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 type MenuProps = {
-  openMenu: boolean;
+  open: boolean;
 };
 
 export const Button = styled.button`
@@ -27,8 +27,8 @@ export const Button = styled.button`
 `;
 
 export const Menu = styled.div<MenuProps>`
-  ${({ theme, openMenu }) => css`
-    display: ${openMenu ? 'block' : 'none'};
+  ${({ theme, open }) => css`
+    display: ${open ? 'block' : 'none'};
     position: absolute;
     left: 0;
     top: 100%;

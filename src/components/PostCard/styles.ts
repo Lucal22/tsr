@@ -6,25 +6,44 @@ import { PostHover } from '../StyleFunctions/postHover';
 export const Container = styled.div<PostStyleProps>`
   ${({ theme, categorySlug }) => css`
     position: relative;
-    display: grid;
-    grid-template-columns: 35rem 1fr;
+    display: flex;
+    //grid-template-columns: 35rem 1fr;
     color: ${theme.colors.primary};
     background-color: ${theme.background.secondary};
     height: 19.7rem;
     margin-bottom: 2rem;
     border-radius: 0 1.5rem 0 0;
     ${PostHover[categorySlug](theme)}
+    @media (max-width: ${theme.screen.size.medium}) {
+      border-radius: 1.5rem;
+    }
+    @media (max-width: ${theme.screen.size.xSmall}) {
+      height: 14rem;
+      border-radius: 1.5rem;
+    }
   `}
 `;
 
 export const Thumbnail = styled.div`
-  width: 100%;
+  ${({ theme }) => css`
+    width: 35rem;
+    @media (max-width: ${theme.screen.size.medium}) {
+      padding-left: 1rem;
+      display: flex;
+      align-items: center;
+    }
+  `}
 `;
 
 export const CardContent = styled.div`
-  width: 100%;
-  height: 19.7rem;
-  padding: 1rem;
+  ${({ theme }) => css`
+    width: 55rem;
+    height: 19.7rem;
+    padding: 1rem;
+    @media (max-width: ${theme.screen.size.small}) {
+      width: 30rem;
+    }
+  `}
 `;
 
 export const Category = styled.p<PostStyleProps>`
@@ -37,6 +56,9 @@ export const Heading = styled.h2`
   ${({ theme }) => css`
     padding: 0.5rem 0;
     font-size: ${theme.fonts.size.heading};
+    @media (max-width: ${theme.screen.size.xSmall}) {
+      font-size: ${theme.fonts.size.small};
+    }
   `}
 `;
 
@@ -45,6 +67,9 @@ export const Description = styled.p`
     font-size: ${theme.fonts.size.xSmall};
     color: ${theme.colors.slate500};
     padding-bottom: 0.5rem;
+    @media (max-width: ${theme.screen.size.small}) {
+      display: none;
+    }
   `}
 `;
 

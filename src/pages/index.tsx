@@ -31,6 +31,7 @@ export const getStaticProps: GetStaticProps<
   } catch (e) {
     data = null;
   }
+  //const sprout = null;
   //const dataCategory = null;
   // try {
   //   dataCategory = await loadCategories();

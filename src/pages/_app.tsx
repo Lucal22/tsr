@@ -5,6 +5,7 @@ import { GlobalStyles } from '../styles/global-styles';
 import light from '../styles/theme/light';
 import dark from '../styles/theme/dark';
 import { useEffect, useState } from 'react';
+import Footer from '../components/Footer';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [theme, setTheme] = useState(light);
@@ -32,6 +33,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Header handleTheme={handleTheme} />
       <Component {...pageProps} />
       <GlobalStyles />
+      <Footer />
     </ThemeProvider>
   );
 }

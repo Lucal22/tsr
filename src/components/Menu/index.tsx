@@ -25,7 +25,7 @@ export default function Menu() {
         />
       </Styled.Button>
       <Styled.Menu
-        openMenu={menu}
+        open={menu}
         as={motion.div}
         whileInView={{ x: [-200, 0] }}
         transition={{ duration: 0.85, ease: 'easeOut' }}

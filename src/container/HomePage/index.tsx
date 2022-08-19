@@ -1,12 +1,13 @@
 import React from 'react';
+
 import AdBanner from '../../components/AdBanner';
 import Container from '../../components/Container';
 import Grid from '../../components/Grid';
 import MainPost from '../../components/MainPost';
 import * as Styled from './styles';
-
 import PostCard from '../../components/PostCard';
 import { HomeProps } from '../../pages';
+import Banners from '../../components/Banners';
 
 export default function HomePage({ posts }: HomeProps) {
   const postArray = posts.data;
@@ -55,10 +56,36 @@ export default function HomePage({ posts }: HomeProps) {
                 );
               })}
             </Styled.Posts>
-            <div>
-              {' '}
-              <h1>Hello</h1>
-            </div>
+            <Styled.Banners>
+              <Banners
+                bannerThumb={lastPost.image.data.attributes.formats.small.url}
+                category={'Endwalker'}
+                categorySlug={'endwalker'}
+                slug={'endwalker'}
+                title={lastPost.title}
+              />
+              <Banners
+                bannerThumb={lastPost.image.data.attributes.formats.small.url}
+                category={'Endwalker'}
+                categorySlug={'arr'}
+                slug={'endwalker'}
+                title={lastPost.title}
+              />
+              <Banners
+                bannerThumb={lastPost.image.data.attributes.formats.small.url}
+                category={'Endwalker'}
+                categorySlug={'stormblood'}
+                slug={'endwalker'}
+                title={lastPost.title}
+              />
+              <Banners
+                bannerThumb={lastPost.image.data.attributes.formats.small.url}
+                category={'Endwalker'}
+                categorySlug={'stormblood'}
+                slug={'endwalker'}
+                title={lastPost.title}
+              />
+            </Styled.Banners>
           </Grid>
         </Styled.Content>
       </Container>
