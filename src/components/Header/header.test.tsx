@@ -4,7 +4,13 @@ import Header from './index';
 
 describe('<Header />', () => {
   it('should render', () => {
-    renderTheme(<Header theme={'light'} />);
+    renderTheme(
+      <Header
+        handleTheme={function (): void {
+          throw new Error('Function not implemented.');
+        }}
+      />,
+    );
     expect(screen.getByRole('heading')).toBeInTheDocument;
   });
 });

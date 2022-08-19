@@ -4,7 +4,7 @@ import Menu from './index';
 
 describe('<Menu />', () => {
   it('should render', () => {
-    renderTheme(<Menu>xD</Menu>);
+    renderTheme(<Menu />);
     expect(screen.getByRole('heading')).toBeInTheDocument;
   });
 });

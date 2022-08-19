@@ -3,11 +3,10 @@ import { PostStyleProps } from '../../Types/style';
 import { Colors } from '../StyleFunctions/color';
 import { PostHover } from '../StyleFunctions/postHover';
 
-export const Container = styled.div<PostStyleProps>`
+export const Container = styled.article<PostStyleProps>`
   ${({ theme, categorySlug }) => css`
     position: relative;
     display: flex;
-    //grid-template-columns: 35rem 1fr;
     color: ${theme.colors.primary};
     background-color: ${theme.background.secondary};
     height: 19.7rem;
