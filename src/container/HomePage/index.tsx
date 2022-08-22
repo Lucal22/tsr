@@ -10,7 +10,7 @@ import { HomeProps } from '../../pages';
 import Banners from '../../components/Banners';
 import MorePosts from '../../components/MorePosts';
 
-export default function HomePage({ posts }: HomeProps) {
+export default function HomePage({ posts, mount, letter }: HomeProps) {
   const [morePosts, setMorePosts] = useState<number>(6);
 
   const postArray = posts.data.slice(0, morePosts);
@@ -74,21 +74,26 @@ export default function HomePage({ posts }: HomeProps) {
                 slug={'endwalker'}
                 title={lastPost.title}
               />
+
               <Banners
-                bannerThumb={lastPost.image.data.attributes.formats.small.url}
-                alt={lastPost.image.data.attributes.alternativeText}
-                category={'Endwalker'}
-                categorySlug={'arr'}
-                slug={'endwalker'}
-                title={lastPost.title}
+                bannerThumb={
+                  letter.attributes.image.data.attributes.formats.small.url
+                }
+                alt={letter.attributes.image.data.attributes.alternativeText}
+                category={letter.attributes.category.data.attributes.name}
+                categorySlug={letter.attributes.category.data.attributes.slug}
+                slug={letter.attributes.slug}
+                title={letter.attributes.title}
               />
               <Banners
-                bannerThumb={lastPost.image.data.attributes.formats.small.url}
-                alt={lastPost.image.data.attributes.alternativeText}
-                category={'Endwalker'}
-                categorySlug={'stormblood'}
-                slug={'endwalker'}
-                title={lastPost.title}
+                bannerThumb={
+                  mount.attributes.image.data.attributes.formats.small.url
+                }
+                alt={mount.attributes.image.data.attributes.alternativeText}
+                category={mount.attributes.category.data.attributes.name}
+                categorySlug={mount.attributes.category.data.attributes.slug}
+                slug={mount.attributes.slug}
+                title={mount.attributes.title}
               />
               <Banners
                 bannerThumb={lastPost.image.data.attributes.formats.small.url}
