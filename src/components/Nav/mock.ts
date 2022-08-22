@@ -1,8 +1,8 @@
 const list = [
   [
     {
-      children: 'Notícias',
-      link: '/news',
+      children: 'Posts',
+      link: '/posts',
       newTab: false,
     },
     {

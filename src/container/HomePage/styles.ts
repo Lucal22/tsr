@@ -46,3 +46,21 @@ export const Banners = styled.div`
     }
   `}
 `;
+
+export const MorePostsTop = styled.div`
+  ${({ theme }) => css`
+    display: none;
+    @media (max-width: ${theme.screen.size.medium}) {
+      display: block;
+    }
+  `}
+`;
+
+export const MorePostsBot = styled.div`
+  ${({ theme }) => css`
+    display: block;
+    @media (max-width: ${theme.screen.size.medium}) {
+      display: none;
+    }
+  `}
+`;

@@ -10,7 +10,7 @@ export const Header = styled.header`
   `}
 `;
 
-export const Logo = styled.a`
+export const Logo = styled.div`
   max-width: 33.2rem;
   @media (max-width: 1000px) {
     display: none;

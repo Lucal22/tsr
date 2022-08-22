@@ -1,10 +1,10 @@
-import Image from 'next/image';
 import React from 'react';
 import Container from '../Container';
 import Links from '../Links';
 import * as Styled from './styles';
 import { img } from '../../assets';
 import list from './mock';
+import Images from '../Images';
 
 //export type FooterProps = {};
 
@@ -14,9 +14,7 @@ export default function Footer() {
       <Container width={'large'}>
         <Styled.Grid>
           <Styled.Thumbnail>
-            <Links link={'/'}>
-              <Image src={img.footer} />
-            </Links>
+            <Images link={'/'} src={img.footer} alt="Website Logo" />
           </Styled.Thumbnail>
           <Styled.About>
             <p>SOBRE</p>
@@ -63,7 +61,7 @@ export default function Footer() {
         </Styled.Grid>
         <Styled.Copyright>
           <p>Copyright</p>
-          <p>Feito por Lucal :)</p>
+          <p>{'Feito por Lucal :)'}</p>
         </Styled.Copyright>
       </Container>
     </Styled.Container>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import AdBanner from '../../components/AdBanner';
 import Container from '../../components/Container';
@@ -8,9 +8,12 @@ import * as Styled from './styles';
 import PostCard from '../../components/PostCard';
 import { HomeProps } from '../../pages';
 import Banners from '../../components/Banners';
+import MorePosts from '../../components/MorePosts';
 
 export default function HomePage({ posts }: HomeProps) {
-  const postArray = posts.data;
+  const [morePosts, setMorePosts] = useState<number>(6);
+
+  const postArray = posts.data.slice(0, morePosts);
   const lastPost = posts.data[0].attributes;
   const lastPost2 = posts.data[1].attributes;
 
@@ -22,6 +25,7 @@ export default function HomePage({ posts }: HomeProps) {
           <Styled.Flex>
             <MainPost
               image={lastPost.image.data.attributes.formats.medium.url}
+              alt={lastPost.image.data.attributes.alternativeText}
               titleSlug={lastPost.slug}
               categorySlug={lastPost.category.data.attributes.slug}
               title={lastPost.title}
@@ -29,6 +33,7 @@ export default function HomePage({ posts }: HomeProps) {
             />
             <MainPost
               image={lastPost2.image.data.attributes.formats.medium.url}
+              alt={lastPost2.image.data.attributes.alternativeText}
               titleSlug={lastPost2.slug}
               categorySlug={lastPost2.category.data.attributes.slug}
               title={lastPost2.title}
@@ -44,6 +49,7 @@ export default function HomePage({ posts }: HomeProps) {
                     thumbnail={
                       post.attributes.image.data.attributes.formats.small.url
                     }
+                    alt={post.attributes.image.data.attributes.alternativeText}
                     title={post.attributes.title}
                     categorySlug={post.attributes.category.data.attributes.slug}
                     slug={post.attributes.slug}
@@ -56,9 +62,13 @@ export default function HomePage({ posts }: HomeProps) {
                 );
               })}
             </Styled.Posts>
+            <Styled.MorePostsTop>
+              <MorePosts morePosts={morePosts} setMorePosts={setMorePosts} />
+            </Styled.MorePostsTop>
             <Styled.Banners>
               <Banners
                 bannerThumb={lastPost.image.data.attributes.formats.small.url}
+                alt={lastPost.image.data.attributes.alternativeText}
                 category={'Endwalker'}
                 categorySlug={'endwalker'}
                 slug={'endwalker'}
@@ -66,6 +76,7 @@ export default function HomePage({ posts }: HomeProps) {
               />
               <Banners
                 bannerThumb={lastPost.image.data.attributes.formats.small.url}
+                alt={lastPost.image.data.attributes.alternativeText}
                 category={'Endwalker'}
                 categorySlug={'arr'}
                 slug={'endwalker'}
@@ -73,6 +84,7 @@ export default function HomePage({ posts }: HomeProps) {
               />
               <Banners
                 bannerThumb={lastPost.image.data.attributes.formats.small.url}
+                alt={lastPost.image.data.attributes.alternativeText}
                 category={'Endwalker'}
                 categorySlug={'stormblood'}
                 slug={'endwalker'}
@@ -80,6 +92,7 @@ export default function HomePage({ posts }: HomeProps) {
               />
               <Banners
                 bannerThumb={lastPost.image.data.attributes.formats.small.url}
+                alt={lastPost.image.data.attributes.alternativeText}
                 category={'Endwalker'}
                 categorySlug={'stormblood'}
                 slug={'endwalker'}
@@ -87,6 +100,9 @@ export default function HomePage({ posts }: HomeProps) {
               />
             </Styled.Banners>
           </Grid>
+          <Styled.MorePostsBot>
+            <MorePosts morePosts={morePosts} setMorePosts={setMorePosts} />
+          </Styled.MorePostsBot>
         </Styled.Content>
       </Container>
     </Styled.Container>

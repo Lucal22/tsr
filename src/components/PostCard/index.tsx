@@ -1,12 +1,13 @@
-import Image from 'next/image';
 import React from 'react';
 import { PostStyleProps } from '../../Types/style';
 import Details from '../Details';
+import Images from '../Images';
 import Links from '../Links';
 import * as Styled from './styles';
 
 export type PostCardProps = PostStyleProps & {
   thumbnail: string;
+  alt: string;
   title: string;
   slug: string;
   category: string;
@@ -25,14 +26,19 @@ export default function PostCard({
   authorSlug,
   author,
   date,
+  alt,
   description,
 }: PostCardProps) {
   return (
     <Styled.Container categorySlug={categorySlug}>
       <Styled.Thumbnail>
-        <Links link={`/${categorySlug}/${slug}`}>
-          <Image src={thumbnail} width={350} height={197} />
-        </Links>
+        <Images
+          link={`/${categorySlug}/${slug}`}
+          src={thumbnail}
+          width={350}
+          height={197}
+          alt={alt}
+        />
       </Styled.Thumbnail>
       <Styled.CardContent>
         <Styled.Category categorySlug={categorySlug}>

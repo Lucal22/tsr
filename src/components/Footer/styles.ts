@@ -64,7 +64,7 @@ export const Topics = styled.ul`
     li {
       margin-bottom: 0.5rem;
       list-style-type: none;
-      &:hover {
+      a:hover {
         color: ${theme.colors.logo};
       }
     }

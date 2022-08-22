@@ -1,11 +1,12 @@
 import React from 'react';
 import * as Styled from './styles';
-import Image from 'next/image';
 import Links from '../Links';
 import { PostStyleProps } from '../../Types/style';
+import Images from '../Images';
 
 export type BannersProps = PostStyleProps & {
   bannerThumb: string;
+  alt: string;
   category: string;
   slug: string;
   title: string;
@@ -13,6 +14,7 @@ export type BannersProps = PostStyleProps & {
 
 export default function Banners({
   bannerThumb,
+  alt,
   category,
   categorySlug,
   slug,
@@ -21,9 +23,13 @@ export default function Banners({
   return (
     <Styled.Container>
       <Styled.Thumbnail>
-        <Links link={`/${categorySlug}/${slug}`}>
-          <Image src={bannerThumb} width={300} height={169} />
-        </Links>
+        <Images
+          link={`/${categorySlug}/${slug}`}
+          src={bannerThumb}
+          width={300}
+          height={169}
+          alt={alt}
+        />
       </Styled.Thumbnail>
       <Styled.Category categorySlug={categorySlug}>
         <Links link={`/${categorySlug}`}>{category}</Links>
