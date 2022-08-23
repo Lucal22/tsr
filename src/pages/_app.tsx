@@ -6,6 +6,7 @@ import light from '../styles/theme/light';
 import dark from '../styles/theme/dark';
 import { useEffect, useState } from 'react';
 import Footer from '../components/Footer';
+import AdBanner from '../components/AdBanner';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [theme, setTheme] = useState(light);
@@ -31,6 +32,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <Header handleTheme={handleTheme} />
+      <AdBanner />
       <Component {...pageProps} />
       <GlobalStyles />
       <Footer />

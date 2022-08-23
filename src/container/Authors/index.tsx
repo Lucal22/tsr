@@ -1,47 +1,38 @@
 import React, { useState } from 'react';
 
-import AdBanner from '../../components/AdBanner';
 import Container from '../../components/Container';
 import Grid from '../../components/Grid';
-import MainPost from '../../components/MainPost';
 import * as Styled from './styles';
 import PostCard from '../../components/PostCard';
 import { HomeProps } from '../../pages';
 import Banners from '../../components/Banners';
-import MorePosts from '../../components/MorePosts';
 import SideContent from '../../components/SideContent';
+import AuthorCard from '../../components/AuthorCard';
+import { img } from '../../assets';
+import { PageProps } from '../../Types/post';
 
-export default function HomePage({ posts, mount, letter }: HomeProps) {
-  const [morePosts, setMorePosts] = useState<number>(6);
-
-  const postArray = posts.data.slice(0, morePosts);
+export default function Authors({ posts, letter, mount }: PageProps) {
+  const postArray = posts.data;
   const lastPost = posts.data[0].attributes;
-  const lastPost2 = posts.data[1].attributes;
 
   return (
     <Styled.Container>
       <Container width={'large'}>
         <Styled.Content>
-          <Styled.Flex>
-            <MainPost
-              image={lastPost.image.data.attributes.formats.medium.url}
-              alt={lastPost.image.data.attributes.alternativeText}
-              titleSlug={lastPost.slug}
-              categorySlug={lastPost.category.data.attributes.slug}
-              title={lastPost.title}
-              category={lastPost.category.data.attributes.name}
-            />
-            <MainPost
-              image={lastPost2.image.data.attributes.formats.medium.url}
-              alt={lastPost2.image.data.attributes.alternativeText}
-              titleSlug={lastPost2.slug}
-              categorySlug={lastPost2.category.data.attributes.slug}
-              title={lastPost2.title}
-              category={lastPost2.category.data.attributes.name}
-            />
-          </Styled.Flex>
           <Grid>
             <Styled.Posts>
+              <AuthorCard
+                categorySlug={'endwalker'}
+                thumbnail={img.banner}
+                alt={''}
+                slug={''}
+                category={''}
+                authorSlug={''}
+                author={'Lucal'}
+                date={''}
+                description={''}
+                ttLink={'http://twitter.com/lucal_22'}
+              />
               {postArray.map((post) => {
                 return (
                   <PostCard
@@ -62,9 +53,6 @@ export default function HomePage({ posts, mount, letter }: HomeProps) {
                 );
               })}
             </Styled.Posts>
-            <Styled.MorePostsTop>
-              <MorePosts morePosts={morePosts} setMorePosts={setMorePosts} />
-            </Styled.MorePostsTop>
             <SideContent>
               <Banners
                 bannerThumb={lastPost.image.data.attributes.formats.small.url}
@@ -105,9 +93,6 @@ export default function HomePage({ posts, mount, letter }: HomeProps) {
               />
             </SideContent>
           </Grid>
-          <Styled.MorePostsBot>
-            <MorePosts morePosts={morePosts} setMorePosts={setMorePosts} />
-          </Styled.MorePostsBot>
         </Styled.Content>
       </Container>
     </Styled.Container>

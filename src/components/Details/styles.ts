@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { PostStyleProps } from '../../Types/style';
-import { Colors } from '../StyleFunctions/color';
+import { Colors } from '../../styles/functions/color';
 
 export const Details = styled.p<PostStyleProps>`
   ${({ theme, categorySlug, font }) => css`

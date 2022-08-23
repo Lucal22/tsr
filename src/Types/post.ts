@@ -131,3 +131,9 @@ export type SinglePost = {
   attributes: PostData;
   meta: object;
 };
+
+export type PageProps = {
+  posts: FullPost;
+  mount: PostObject;
+  letter: PostObject;
+};

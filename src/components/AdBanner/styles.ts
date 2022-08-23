@@ -6,9 +6,7 @@ export const Banner = styled.div`
     align-items: center;
     justify-content: center;
     height: 100%;
-    padding: 0 1.5rem;
-    margin-top: 3.5rem;
-    margin-bottom: 3.5rem;
+    padding: 13.5rem 1.5rem 3rem 1.5rem;
     @media (max-width: ${theme.screen.size.small}) {
       margin-top: 0;
     }

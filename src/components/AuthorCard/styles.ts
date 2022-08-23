@@ -54,7 +54,7 @@ export const Category = styled.p<PostStyleProps>`
 export const Heading = styled.h2`
   ${({ theme }) => css`
     padding: 0.5rem 0;
-    font-size: ${theme.fonts.size.heading};
+    font-size: ${theme.fonts.size.medium};
     @media (max-width: ${theme.screen.size.xSmall}) {
       font-size: ${theme.fonts.size.small};
     }
@@ -76,3 +76,11 @@ export const Details = styled.div`
   position: absolute;
   bottom: 0;
 `;
+
+export const Preferences = styled.div`
+  ${({ theme }) => css`
+    color: ${theme.colors.details};
+  `}
+`;
+
+export const SocialMedias = styled.div``;
