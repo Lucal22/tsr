@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import AdBanner from '../../components/AdBanner';
 import Container from '../../components/Container';
 import Grid from '../../components/Grid';
 import MainPost from '../../components/MainPost';

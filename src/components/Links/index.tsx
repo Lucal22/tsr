@@ -3,7 +3,7 @@ import * as Styled from './styles';
 
 export type LinksProps = {
   children: React.ReactNode;
-  link: string;
+  link?: string;
   newTab?: boolean;
 };
 

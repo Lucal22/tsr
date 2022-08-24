@@ -23,7 +23,8 @@ export default function Details({
 }: DetailsProps) {
   return (
     <Styled.Details categorySlug={categorySlug} font={font}>
-      Publicado por <Links link={`/${authorSlug}`}>{author} </Links>
+      Publicado por{' '}
+      <Links link={`/about/authors/${authorSlug}`}>{author} </Links>
       em <Date date={date} />
       {addCategory ? (
         <>

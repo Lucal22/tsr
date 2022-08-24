@@ -34,6 +34,10 @@ export type PostAuthor = {
       name: string;
       slug: string;
       description: string;
+      server: string;
+      job: string;
+      ttlink: string;
+      ttname: string;
       image: ImageSimplifiedFormat;
     };
   };

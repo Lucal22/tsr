@@ -19,6 +19,13 @@ export const GRAPHQL_POST_FRAGMENTS = gql`
     name
     description
     slug
+    job
+    server
+    ttlink
+    ttname
+    image {
+      ...image
+    }
   }
 
   fragment categoryPostContent on Category {

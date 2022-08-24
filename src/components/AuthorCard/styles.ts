@@ -1,18 +1,14 @@
 import styled, { css } from 'styled-components';
-import { PostStyleProps } from '../../Types/style';
-import { Colors } from '../../styles/functions/color';
-import { PostHover } from '../../styles/functions/postHover';
 
-export const Container = styled.article<PostStyleProps>`
-  ${({ theme, categorySlug }) => css`
+export const Container = styled.article`
+  ${({ theme }) => css`
     position: relative;
     display: flex;
     color: ${theme.colors.primary};
     background-color: ${theme.background.secondary};
-    height: 19.7rem;
+    height: 100%;
     margin-bottom: 2rem;
     border-radius: 0 1.5rem 0 0;
-    ${PostHover[categorySlug](theme)}
     @media (max-width: ${theme.screen.size.medium}) {
       border-radius: 1.5rem;
     }
@@ -37,17 +33,11 @@ export const Thumbnail = styled.div`
 export const CardContent = styled.div`
   ${({ theme }) => css`
     width: 55rem;
-    height: 19.7rem;
+    height: 100%;
     padding: 1rem;
     @media (max-width: ${theme.screen.size.small}) {
       width: 30rem;
     }
-  `}
-`;
-
-export const Category = styled.p<PostStyleProps>`
-  ${({ theme, categorySlug }) => css`
-    ${Colors[categorySlug](theme)}
   `}
 `;
 
@@ -64,8 +54,9 @@ export const Heading = styled.h2`
 export const Description = styled.p`
   ${({ theme }) => css`
     font-size: ${theme.fonts.size.xSmall};
-    color: ${theme.colors.slate500};
+    color: ${theme.colors.details};
     padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
     @media (max-width: ${theme.screen.size.small}) {
       display: none;
     }
@@ -80,6 +71,9 @@ export const Details = styled.div`
 export const Preferences = styled.div`
   ${({ theme }) => css`
     color: ${theme.colors.details};
+    a {
+      color: ${theme.colors.blue};
+    }
   `}
 `;
 

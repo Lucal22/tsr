@@ -1,19 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Container from '../../components/Container';
 import Grid from '../../components/Grid';
 import * as Styled from './styles';
 import PostCard from '../../components/PostCard';
-import { HomeProps } from '../../pages';
 import Banners from '../../components/Banners';
 import SideContent from '../../components/SideContent';
 import AuthorCard from '../../components/AuthorCard';
-import { img } from '../../assets';
 import { PageProps } from '../../Types/post';
 
 export default function Authors({ posts, letter, mount }: PageProps) {
   const postArray = posts.data;
-  const lastPost = posts.data[0].attributes;
+  const postAuthor = posts.data[0].attributes.author.data.attributes;
 
   return (
     <Styled.Container>
@@ -22,16 +20,15 @@ export default function Authors({ posts, letter, mount }: PageProps) {
           <Grid>
             <Styled.Posts>
               <AuthorCard
-                categorySlug={'endwalker'}
-                thumbnail={img.banner}
-                alt={''}
-                slug={''}
-                category={''}
-                authorSlug={''}
-                author={'Lucal'}
-                date={''}
-                description={''}
-                ttLink={'http://twitter.com/lucal_22'}
+                thumbnail={postAuthor.image.data.attributes.formats.small.url}
+                height={postAuthor.image.data.attributes.formats.small.height}
+                alt={postAuthor.image.data.attributes.alternativeText}
+                author={postAuthor.name}
+                description={postAuthor.description}
+                twitter={postAuthor.ttname}
+                ttLink={postAuthor.ttlink}
+                job={postAuthor.job}
+                server={postAuthor.server}
               />
               {postArray.map((post) => {
                 return (
@@ -55,12 +52,14 @@ export default function Authors({ posts, letter, mount }: PageProps) {
             </Styled.Posts>
             <SideContent>
               <Banners
-                bannerThumb={lastPost.image.data.attributes.formats.small.url}
-                alt={lastPost.image.data.attributes.alternativeText}
-                category={'Endwalker'}
-                categorySlug={'endwalker'}
-                slug={'endwalker'}
-                title={lastPost.title}
+                bannerThumb={
+                  mount.attributes.image.data.attributes.formats.small.url
+                }
+                alt={mount.attributes.image.data.attributes.alternativeText}
+                category={mount.attributes.category.data.attributes.name}
+                categorySlug={mount.attributes.category.data.attributes.slug}
+                slug={mount.attributes.slug}
+                title={mount.attributes.title}
               />
 
               <Banners
@@ -84,12 +83,14 @@ export default function Authors({ posts, letter, mount }: PageProps) {
                 title={mount.attributes.title}
               />
               <Banners
-                bannerThumb={lastPost.image.data.attributes.formats.small.url}
-                alt={lastPost.image.data.attributes.alternativeText}
-                category={'Endwalker'}
-                categorySlug={'stormblood'}
-                slug={'endwalker'}
-                title={lastPost.title}
+                bannerThumb={
+                  letter.attributes.image.data.attributes.formats.small.url
+                }
+                alt={letter.attributes.image.data.attributes.alternativeText}
+                category={letter.attributes.category.data.attributes.name}
+                categorySlug={letter.attributes.category.data.attributes.slug}
+                slug={letter.attributes.slug}
+                title={letter.attributes.title}
               />
             </SideContent>
           </Grid>
