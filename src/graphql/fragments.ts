@@ -5,6 +5,9 @@ export const GRAPHQL_POST_FRAGMENTS = gql`
     data {
       attributes {
         alternativeText
+        url
+        width
+        height
         formats
       }
     }

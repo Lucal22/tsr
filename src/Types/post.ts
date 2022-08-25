@@ -4,6 +4,9 @@ export type ImageSimplifiedFormat = {
   data: {
     attributes: {
       alternativeText: string;
+      url: string;
+      height: number;
+      width: number;
       formats: {
         thumbnail: PostCoverFormat;
         small: PostCoverFormat;
@@ -90,6 +93,9 @@ export type PostCover = PostCoverFormat & {
     attributes: {
       id: PostID;
       alternativeText: string;
+      url: string;
+      height: number;
+      width: number;
       caption: string;
       previewUrl: null;
       provider: string;

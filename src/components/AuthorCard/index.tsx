@@ -11,9 +11,11 @@ export type PostCardProps = {
   alt: string;
   author: string;
   description: string;
+  width: number;
   height: number;
   job: string;
   server: string;
+  char: string;
 };
 
 export default function PostCard({
@@ -26,29 +28,23 @@ export default function PostCard({
   height,
   job,
   server,
+  width,
+  char,
 }: PostCardProps) {
   return (
     <Styled.Container>
       <Styled.Thumbnail>
-        <Images
-          link={``}
-          src={thumbnail}
-          width={350}
-          height={height}
-          alt={alt}
-        />
+        <Images src={thumbnail} width={width} height={height} alt={alt} />
       </Styled.Thumbnail>
       <Styled.CardContent>
         <Styled.Heading>{`Luís Carlos (${author})`}</Styled.Heading>
-        <Styled.Description>
-          {description} Lorem ipsum dolor sit amet consectetur, adipisicing
-          elit. Illum eius optio commodi exercitationem, repudiandae explicabo
-          excepturi incidunt quas, magni quasi unde fugiat deserunt amet totam
-          saepe ducimus dolorum veritatis animi.{' '}
-        </Styled.Description>
-        <Styled.Preferences>{`Server: (${server})`}</Styled.Preferences>
-        <Styled.Preferences>{`Nome do personagem: (${author})`}</Styled.Preferences>
-        <Styled.Preferences>{`Profissão favorita: (${job})`}</Styled.Preferences>
+        <Styled.Description>{description}</Styled.Description>
+        <Styled.Preferences>{`Server: ${server}`}</Styled.Preferences>
+        <Styled.Preferences>{`Nome do personagem: ${char}`}</Styled.Preferences>
+        <Styled.Preferences>{`Profissão favorita: ${job.replace(
+          '_',
+          ' ',
+        )}`}</Styled.Preferences>
         {twitter ? (
           <Styled.Preferences>
             {`Twitter: `}
@@ -57,7 +53,6 @@ export default function PostCard({
             </Links>
           </Styled.Preferences>
         ) : null}
-        <Styled.SocialMedias></Styled.SocialMedias>
       </Styled.CardContent>
     </Styled.Container>
   );

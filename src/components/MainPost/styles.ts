@@ -6,7 +6,7 @@ import { Hover } from '../../styles/functions/hover';
 export const Container = styled.article`
   ${({ theme }) => css`
     width: 100%;
-    height: 100%;
+    min-height: 45.3rem;
     background-color: ${theme.background.secondary};
     border-radius: 5px;
     padding: 20px 20px 10px 20px;

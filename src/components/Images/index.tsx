@@ -3,7 +3,7 @@ import React from 'react';
 import Links from '../Links';
 
 export type ImageProps = {
-  link: string;
+  link?: string;
   src: string | StaticImageData;
   alt: string;
   width?: string | number;

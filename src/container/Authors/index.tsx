@@ -20,8 +20,9 @@ export default function Authors({ posts, letter, mount }: PageProps) {
           <Grid>
             <Styled.Posts>
               <AuthorCard
-                thumbnail={postAuthor.image.data.attributes.formats.small.url}
-                height={postAuthor.image.data.attributes.formats.small.height}
+                thumbnail={postAuthor.image.data.attributes.url}
+                width={postAuthor.image.data.attributes.width}
+                height={postAuthor.image.data.attributes.height}
                 alt={postAuthor.image.data.attributes.alternativeText}
                 author={postAuthor.name}
                 description={postAuthor.description}
@@ -29,6 +30,7 @@ export default function Authors({ posts, letter, mount }: PageProps) {
                 ttLink={postAuthor.ttlink}
                 job={postAuthor.job}
                 server={postAuthor.server}
+                char={postAuthor.ffnickname}
               />
               {postArray.map((post) => {
                 return (

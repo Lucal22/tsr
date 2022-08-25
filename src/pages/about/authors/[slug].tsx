@@ -39,6 +39,8 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
   let data = null;
   try {
     data = await loadPosts({
+      start: 0,
+      limit: 4,
       authorSlug: {
         eq: ctx.params.slug as string,
       },

@@ -6,7 +6,7 @@ export const Container = styled.article`
     display: flex;
     color: ${theme.colors.primary};
     background-color: ${theme.background.secondary};
-    height: 100%;
+    max-height: 40rem;
     margin-bottom: 2rem;
     border-radius: 0 1.5rem 0 0;
     @media (max-width: ${theme.screen.size.medium}) {
@@ -74,7 +74,8 @@ export const Preferences = styled.div`
     a {
       color: ${theme.colors.blue};
     }
+    @media (max-width: ${theme.screen.size.small}) {
+      display: none;
+    }
   `}
 `;
-
-export const SocialMedias = styled.div``;
