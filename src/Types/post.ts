@@ -38,6 +38,7 @@ export type PostAuthor = {
       job: string;
       ttlink: string;
       ttname: string;
+      ffnickname: string;
       image: ImageSimplifiedFormat;
     };
   };

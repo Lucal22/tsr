@@ -23,6 +23,7 @@ export const GRAPHQL_POST_FRAGMENTS = gql`
     server
     ttlink
     ttname
+    ffnickname
     image {
       ...image
     }
