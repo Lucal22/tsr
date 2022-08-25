@@ -24,6 +24,7 @@ export type LoadPostVariables = {
 
 export type RequestResponse = {
   posts: FullPost;
+  variables?: LoadPostVariables;
 };
 
 export const loadPosts = async (

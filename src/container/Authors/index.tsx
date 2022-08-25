@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Container from '../../components/Container';
 import Grid from '../../components/Grid';
@@ -9,7 +9,16 @@ import SideContent from '../../components/SideContent';
 import AuthorCard from '../../components/AuthorCard';
 import { PageProps } from '../../Types/post';
 
-export default function Authors({ posts, letter, mount }: PageProps) {
+export default function Authors({
+  posts,
+  letter,
+  mount,
+  variables,
+}: PageProps) {
+  const [stateVariables, setStateVariables] = useState(variables);
+  const [disabled, setDisabled] = useState(false);
+  const [noMorePosts, setNoMorePosts] = useState(false);
+
   const postArray = posts.data;
   const postAuthor = posts.data[0].attributes.author.data.attributes;
 

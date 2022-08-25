@@ -1,3 +1,5 @@
+import { LoadPostVariables } from '../data/load-posts';
+
 export type PostID = number;
 
 export type ImageSimplifiedFormat = {
@@ -147,4 +149,5 @@ export type PageProps = {
   posts: FullPost;
   mount: PostObject;
   letter: PostObject;
+  variables?: LoadPostVariables;
 };
