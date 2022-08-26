@@ -8,6 +8,7 @@ import Banners from '../../components/Banners';
 import SideContent from '../../components/SideContent';
 import AuthorCard from '../../components/AuthorCard';
 import { PageProps } from '../../Types/post';
+import ChangePage from '../../components/ChangePage';
 
 export default function Authors({
   posts,
@@ -60,6 +61,7 @@ export default function Authors({
                   />
                 );
               })}
+              <ChangePage />
             </Styled.Posts>
             <SideContent>
               <Banners
