@@ -149,5 +149,5 @@ export type PageProps = {
   posts: FullPost;
   mount: PostObject;
   letter: PostObject;
-  variables?: LoadPostVariables;
+  variables: LoadPostVariables;
 };

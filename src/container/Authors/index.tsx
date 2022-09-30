@@ -9,6 +9,7 @@ import SideContent from '../../components/SideContent';
 import AuthorCard from '../../components/AuthorCard';
 import { PageProps } from '../../Types/post';
 import ChangePage from '../../components/ChangePage';
+import { loadPosts } from '../../data/load-posts';
 
 export default function Authors({
   posts,
@@ -16,13 +17,37 @@ export default function Authors({
   mount,
   variables,
 }: PageProps) {
+  const [statePosts, setStatePosts] = useState(posts.data);
   const [stateVariables, setStateVariables] = useState(variables);
   const [disabled, setDisabled] = useState(false);
   const [noMorePosts, setNoMorePosts] = useState(false);
 
-  const postArray = posts.data;
-  const postAuthor = posts.data[0].attributes.author.data.attributes;
+  const postArray = statePosts;
+  const postAuthor = statePosts[0].attributes.author.data.attributes;
 
+  const handleNextPage = async () => {
+    setDisabled(true);
+    console.log('Cheguei aqui na função');
+    if (stateVariables.start && stateVariables.limit) {
+      console.log('Cheguei aqui no if');
+
+      const newVariables = {
+        ...stateVariables,
+        start: stateVariables.start + stateVariables.limit,
+        limit: stateVariables.limit,
+      };
+      const morePosts = await loadPosts(newVariables);
+
+      if (!morePosts || !morePosts.posts || !morePosts.posts.data.length) {
+        setNoMorePosts(true);
+        return;
+      }
+      setDisabled(false);
+      setStateVariables(newVariables);
+      setStatePosts((p) => [...p, ...morePosts.posts.data]);
+    }
+    console.log('Não fui no IF');
+  };
   return (
     <Styled.Container>
       <Container width={'large'}>
@@ -61,7 +86,7 @@ export default function Authors({
                   />
                 );
               })}
-              <ChangePage />
+              <ChangePage handlePosts={handleNextPage} disabled={disabled} />
             </Styled.Posts>
             <SideContent>
               <Banners

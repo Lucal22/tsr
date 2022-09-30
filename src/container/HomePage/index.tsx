@@ -13,7 +13,7 @@ import SideContent from '../../components/SideContent';
 export default function HomePage({ posts, mount, letter }: HomeProps) {
   const [morePosts, setMorePosts] = useState<number>(6);
 
-  const postArray = posts.data.slice(0, morePosts);
+  const postArray = posts.data;
   const lastPost = posts.data[0].attributes;
   const lastPost2 = posts.data[1].attributes;
 

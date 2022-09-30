@@ -25,7 +25,6 @@ export default function Home({ posts, mount, letter }: HomeProps) {
 
 export const getStaticProps: GetStaticProps<RequestResponse> = async () => {
   let data = null;
-
   try {
     data = await loadPosts();
   } catch (e) {
@@ -36,7 +35,7 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async () => {
   try {
     mount = await loadPosts({
       tagSlug: {
-        contains: 'mount' as string,
+        contains: 'mounts' as string,
       },
     });
   } catch (e) {

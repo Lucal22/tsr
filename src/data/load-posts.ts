@@ -24,19 +24,19 @@ export type LoadPostVariables = {
 
 export type RequestResponse = {
   posts: FullPost;
-  variables?: LoadPostVariables;
+};
+
+export const defaultLoadPostVariables: LoadPostVariables = {
+  sort: 'publishedAt:desc',
+  start: 0,
+  limit: 6,
 };
 
 export const loadPosts = async (
   variables: LoadPostVariables = {},
 ): Promise<RequestResponse> => {
-  const defaultVariables: LoadPostVariables = {
-    sort: 'publishedAt:desc',
-    start: 0,
-    limit: 20,
-  };
   const data = await request(GRAPHQL_URL, GRAPHQL_POST_QUERY, {
-    ...defaultVariables,
+    ...defaultLoadPostVariables,
     ...variables,
   });
   return data;
