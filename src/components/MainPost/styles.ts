@@ -6,11 +6,14 @@ import { Hover } from '../../styles/functions/hover';
 export const Container = styled.article`
   ${({ theme }) => css`
     width: 100%;
-    min-height: 45.3rem;
+    min-height: 30rem;
     background-color: ${theme.background.secondary};
     border-radius: 5px;
     padding: 20px 20px 10px 20px;
     color: ${theme.colors.primary};
+    @media (min-width: ${theme.screen.size.small}) {
+      height: 46rem;
+    }
   `}
 `;
 
