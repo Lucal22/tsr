@@ -9,38 +9,39 @@ export const Container = styled.article<PostStyleProps>`
     display: flex;
     color: ${theme.colors.primary};
     background-color: ${theme.background.secondary};
-    height: 19.7rem;
+    height: 14rem;
+    border-radius: 1.5rem;
     margin-bottom: 2rem;
-    border-radius: 0 1.5rem 0 0;
     ${PostHover[categorySlug](theme)}
-    @media (max-width: ${theme.screen.size.medium}) {
+    @media (min-width: ${theme.screen.size.small}) {
       border-radius: 1.5rem;
     }
-    @media (max-width: ${theme.screen.size.xSmall}) {
-      height: 14rem;
-      border-radius: 1.5rem;
+    @media (min-width: ${theme.screen.size.large}) {
+      height: 19.7rem;
+      border-radius: 0 1.5rem 0 0;
     }
   `}
 `;
 
 export const Thumbnail = styled.div`
   ${({ theme }) => css`
-    width: 35rem;
-    @media (max-width: ${theme.screen.size.medium}) {
-      padding-left: 1rem;
-      display: flex;
-      align-items: center;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    @media (min-width: ${theme.screen.size.large}) {
+      width: 35rem;
     }
   `}
 `;
 
 export const CardContent = styled.div`
   ${({ theme }) => css`
-    width: 55rem;
+    width: 30rem;
     height: 19.7rem;
     padding: 1rem;
-    @media (max-width: ${theme.screen.size.small}) {
-      width: 30rem;
+
+    @media (min-width: ${theme.screen.size.medium}) {
+      width: width: 55rem;
     }
   `}
 `;
@@ -54,20 +55,22 @@ export const Category = styled.p<PostStyleProps>`
 export const Heading = styled.h2`
   ${({ theme }) => css`
     padding: 0.5rem 0;
-    font-size: ${theme.fonts.size.heading};
-    @media (max-width: ${theme.screen.size.xSmall}) {
-      font-size: ${theme.fonts.size.small};
+    font-size: ${theme.fonts.size.small};
+
+    @media (min-width: ${theme.screen.size.small}) {
+      font-size: ${theme.fonts.size.heading};
     }
   `}
 `;
 
 export const Description = styled.p`
   ${({ theme }) => css`
-    font-size: ${theme.fonts.size.xSmall};
-    color: ${theme.colors.slate500};
-    padding-bottom: 0.5rem;
-    @media (max-width: ${theme.screen.size.small}) {
-      display: none;
+    display: none;
+
+    @media (min-width: ${theme.screen.size.medium}) {
+      font-size: ${theme.fonts.size.xSmall};
+      color: ${theme.colors.slate500};
+      padding-bottom: 0.5rem;
     }
   `}
 `;
