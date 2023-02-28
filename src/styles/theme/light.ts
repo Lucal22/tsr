@@ -42,7 +42,7 @@ const theme = {
   screen: {
     size: {
       xSmall: '360px',
-      small: '480px',
+      small: '481px',
       medium: '780px',
       large: '1280px',
     },
