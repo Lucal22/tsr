@@ -79,3 +79,17 @@ export const Preferences = styled.div`
     }
   `}
 `;
+
+export const SocialMedias = styled.div`
+  ${({ theme }) => css`
+    font-size: ${theme.fonts.size.xSmall};
+
+    color: ${theme.colors.details};
+    a {
+      color: ${theme.colors.blue};
+    }
+    @media (min-width: ${theme.screen.size.small}) {
+      font-size: ${theme.fonts.size.small};
+    } ;
+  `}
+`;

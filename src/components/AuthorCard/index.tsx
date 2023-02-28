@@ -46,12 +46,12 @@ export default function PostCard({
           ' ',
         )}`}</Styled.Preferences>
         {twitter ? (
-          <Styled.Preferences>
+          <Styled.SocialMedias>
             {`Twitter: `}
             <Links link={ttLink} newTab={true}>
               {twitter}
             </Links>
-          </Styled.Preferences>
+          </Styled.SocialMedias>
         ) : null}
       </Styled.CardContent>
     </Styled.Container>
