@@ -3,10 +3,15 @@ import * as Styled from './styles';
 
 export type MorePostsProps = {
   morePosts: number;
+  limit: number;
   setMorePosts: React.Dispatch<React.SetStateAction<number>>;
 };
 
-export default function MorePosts({ morePosts, setMorePosts }: MorePostsProps) {
+export default function MorePosts({
+  morePosts,
+  limit,
+  setMorePosts,
+}: MorePostsProps) {
   return (
     <Styled.Container>
       <Styled.Line />
@@ -14,12 +19,10 @@ export default function MorePosts({ morePosts, setMorePosts }: MorePostsProps) {
         aria-label="Mostra mais posts"
         morePosts={morePosts}
         onClick={() => {
-          setMorePosts(morePosts < 20 ? morePosts + 4 : morePosts);
+          setMorePosts(morePosts < limit ? morePosts + 4 : morePosts);
         }}
       >
-        <p>
-          {morePosts < 20 ? 'Clique para mais posts' : 'Veja mais em Posts'}
-        </p>
+        <p>{morePosts < limit ? 'Clique para mais posts' : ''}</p>
       </Styled.Button>
       <Styled.Line />
     </Styled.Container>

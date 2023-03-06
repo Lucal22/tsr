@@ -24,6 +24,7 @@ export const Thumbnail = styled.div`
     width: 35rem;
     @media (max-width: ${theme.screen.size.medium}) {
       padding-left: 1rem;
+      padding-top: 0.8rem;
       display: flex;
       align-items: center;
     }

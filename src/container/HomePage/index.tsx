@@ -62,7 +62,11 @@ export default function HomePage({ posts, mount, letter }: HomeProps) {
               })}
             </Styled.Posts>
             <Styled.MorePostsTop>
-              <MorePosts morePosts={morePosts} setMorePosts={setMorePosts} />
+              <MorePosts
+                morePosts={morePosts}
+                limit={20}
+                setMorePosts={setMorePosts}
+              />
             </Styled.MorePostsTop>
             <SideContent>
               <Banners
@@ -105,7 +109,11 @@ export default function HomePage({ posts, mount, letter }: HomeProps) {
             </SideContent>
           </Grid>
           <Styled.MorePostsBot>
-            <MorePosts morePosts={morePosts} setMorePosts={setMorePosts} />
+            <MorePosts
+              morePosts={morePosts}
+              limit={20}
+              setMorePosts={setMorePosts}
+            />
           </Styled.MorePostsBot>
         </Styled.Content>
       </Container>

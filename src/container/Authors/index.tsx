@@ -28,7 +28,10 @@ export default function Authors({
   const handleNextPage = async () => {
     setDisabled(true);
     console.log('Cheguei aqui na função');
-    if (stateVariables.start && stateVariables.limit) {
+    if (
+      typeof stateVariables.start !== 'undefined' &&
+      typeof stateVariables.limit !== 'undefined'
+    ) {
       console.log('Cheguei aqui no if');
 
       const newVariables = {
