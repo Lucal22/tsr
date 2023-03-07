@@ -1,4 +1,4 @@
-import type { GetStaticProps } from 'next';
+import type { GetServerSideProps, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Authors from '../../../container/Authors';
