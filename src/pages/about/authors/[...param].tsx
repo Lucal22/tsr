@@ -1,4 +1,4 @@
-import type { GetServerSideProps, GetStaticProps } from 'next';
+import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Authors from '../../../container/Authors';
@@ -39,7 +39,8 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
-  if (!ctx.params) {
+  console.log(ctx.params);
+  if (!ctx.params || !ctx.params.param) {
     return {
       notFound: true,
     };
@@ -49,8 +50,10 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
   try {
     data = await loadPosts({
       authorSlug: {
-        eq: ctx.params.slug as string,
+        eq: ctx.params.param[0] as string,
       },
+      start: Number(ctx.params.param[1]),
+      limit: 2,
     });
   } catch (e) {
     data = null;
