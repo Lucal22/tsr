@@ -46,14 +46,20 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
     };
   }
 
+  const page = Number(ctx.params.param[1]);
+  const limit = 2;
+  const start = (page - 1) * limit;
+  const nextPage = page + 1;
+  const previousPage = page - 1;
+
   let data = null;
   try {
     data = await loadPosts({
       authorSlug: {
         eq: ctx.params.param[0] as string,
       },
-      start: Number(ctx.params.param[1]),
-      limit: 2,
+      start: start,
+      limit: limit,
     });
   } catch (e) {
     data = null;
