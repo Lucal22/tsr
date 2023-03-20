@@ -149,5 +149,8 @@ export type PageProps = {
   posts: FullPost;
   mount: PostObject;
   letter: PostObject;
+  author: string;
+  previousPage: number;
+  nextPage: number;
   variables: LoadPostVariables;
 };

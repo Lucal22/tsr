@@ -9,7 +9,15 @@ import {
 } from '../../../data/load-posts';
 import { PageProps } from '../../../Types/post';
 
-export default function Author({ posts, mount, letter, variables }: PageProps) {
+export default function Author({
+  posts,
+  mount,
+  letter,
+  variables,
+  author,
+  nextPage,
+  previousPage,
+}: PageProps) {
   const router = useRouter();
   if (router.isFallback) {
     return <h1>Loading</h1>;
@@ -22,6 +30,9 @@ export default function Author({ posts, mount, letter, variables }: PageProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Authors
+        nextPage={nextPage}
+        previousPage={previousPage}
+        author={author}
         posts={posts}
         mount={mount}
         letter={letter}
@@ -46,6 +57,7 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
     };
   }
 
+  const author = ctx.params.param[0];
   const page = Number(ctx.params.param[1]);
   const limit = 2;
   const start = (page - 1) * limit;
@@ -104,6 +116,9 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
       posts: data.posts,
       mount: mount.posts.data[0],
       letter: letter.posts.data[0],
+      nextPage: nextPage,
+      previousPage: previousPage,
+      author: author,
       variables: {
         ...defaultLoadPostVariables,
       },

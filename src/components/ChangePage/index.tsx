@@ -3,21 +3,25 @@ import React from 'react';
 import * as Styled from './styles';
 
 export type ChangePageProps = {
-  handlePosts: () => void;
-  disabled: boolean;
+  author: string;
+  nextPage: number;
+  previousPage: number;
 };
 
-export default function ChangePage({ disabled, handlePosts }: ChangePageProps) {
+export default function ChangePage({
+  nextPage,
+  previousPage,
+  author,
+}: ChangePageProps) {
+  const next = `/about/authors/${author}/${nextPage}`;
+  const previous = `/about/authors/${author}/${previousPage}`;
+
   return (
     <Styled.Container>
       <Styled.Previous aria-label="Página anterior">
         <CaretLeft size={32} />
       </Styled.Previous>
-      <Styled.Next
-        aria-label="Página seguinte"
-        onClick={handlePosts}
-        disabled={disabled}
-      >
+      <Styled.Next aria-label="Página seguinte">
         <CaretRight size={32} />
       </Styled.Next>{' '}
     </Styled.Container>

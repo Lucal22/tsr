@@ -3,16 +3,22 @@ import React from 'react';
 import Container from '../../components/Container';
 import Grid from '../../components/Grid';
 import * as Styled from './styles';
-import PostCard from '../../components/PostCard';
 import Banners from '../../components/Banners';
 import SideContent from '../../components/SideContent';
 import AuthorCard from '../../components/AuthorCard';
 import { PageProps } from '../../Types/post';
+import PageContainer from '../../components/PageContainer';
 //import ChangePage from '../../components/ChangePage';
 //import { loadPosts } from '../../data/load-posts';
 
-export default function Authors({ posts, letter, mount }: PageProps) {
-  const postArray = posts.data;
+export default function Authors({
+  posts,
+  author,
+  letter,
+  mount,
+  nextPage,
+  previousPage,
+}: PageProps) {
   const postAuthor = posts.data[0].attributes.author.data.attributes;
 
   return (
@@ -34,25 +40,12 @@ export default function Authors({ posts, letter, mount }: PageProps) {
                 server={postAuthor.server}
                 char={postAuthor.ffnickname}
               />
-              {postArray.map((post) => {
-                return (
-                  <PostCard
-                    key={post.id}
-                    thumbnail={
-                      post.attributes.image.data.attributes.formats.small.url
-                    }
-                    alt={post.attributes.image.data.attributes.alternativeText}
-                    title={post.attributes.title}
-                    categorySlug={post.attributes.category.data.attributes.slug}
-                    slug={post.attributes.slug}
-                    category={post.attributes.category.data.attributes.name}
-                    author={post.attributes.author.data.attributes.name}
-                    authorSlug={post.attributes.author.data.attributes.slug}
-                    date={post.attributes.publishedAt}
-                    description={post.attributes.description}
-                  />
-                );
-              })}
+              <PageContainer
+                author={author}
+                nextPage={nextPage}
+                previousPage={previousPage}
+                posts={posts}
+              />
             </Styled.Posts>
             <SideContent>
               <Banners
