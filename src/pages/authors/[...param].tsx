@@ -46,7 +46,6 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
-  console.log(ctx.params);
   if (!ctx.params || !ctx.params.param) {
     return {
       notFound: true,

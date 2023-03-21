@@ -1,29 +1,35 @@
 import { CaretLeft, CaretRight } from 'phosphor-react';
 import React from 'react';
+import Links from '../Links';
 import * as Styled from './styles';
 
 export type ChangePageProps = {
   author: string;
   nextPage: number;
   previousPage: number;
+  postsPerPage: number;
+  numberOfPosts: number;
 };
 
 export default function ChangePage({
   nextPage,
   previousPage,
   author,
+  postsPerPage,
+  numberOfPosts,
 }: ChangePageProps) {
-  const next = `/about/authors/${author}/${nextPage}`;
-  const previous = `/about/authors/${author}/${previousPage}`;
+  const next = `/authors/${author}/${nextPage}`;
+  const previous = `/authors/${author}/${previousPage}`;
+  const hasNextPage = nextPage * postsPerPage < postsPerPage + numberOfPosts;
 
   return (
     <Styled.Container>
-      <Styled.Previous aria-label="Página anterior">
+      <Links link={previous}>
         <CaretLeft size={32} />
-      </Styled.Previous>
-      <Styled.Next aria-label="Página seguinte">
+      </Links>
+      <Links link={next}>
         <CaretRight size={32} />
-      </Styled.Next>{' '}
+      </Links>
     </Styled.Container>
   );
 }

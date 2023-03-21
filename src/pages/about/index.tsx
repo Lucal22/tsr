@@ -1,13 +1,9 @@
 import type { GetStaticProps } from 'next';
 import Head from 'next/head';
-import {
-  defaultLoadPostVariables,
-  loadPosts,
-  RequestResponse,
-} from '../../data/load-posts';
+import { loadPosts, RequestResponse } from '../../data/load-posts';
 import { PageProps } from '../../Types/post';
 
-export default function Author({ posts, mount, letter, variables }: PageProps) {
+export default function Author({ posts, mount, letter }: PageProps) {
   return (
     <div>
       <Head>

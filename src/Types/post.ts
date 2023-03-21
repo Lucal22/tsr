@@ -143,7 +143,7 @@ export type SinglePost = {
   meta: object;
 };
 
-export type Pagination = {
+export type PaginationType = {
   posts: FullPost;
   author: string;
   nextPage: number;
@@ -151,7 +151,7 @@ export type Pagination = {
   postsPerPage: number;
 };
 
-export type PageProps = Pagination & {
+export type PageProps = PaginationType & {
   mount: PostObject;
   letter: PostObject;
 };

@@ -1,23 +1,16 @@
 import React from 'react';
-import { FullPost } from '../../Types/post';
+import { PaginationType } from '../../Types/post';
 import ChangePage from '../ChangePage';
 import PostCard from '../PostCard';
 import * as Styled from './styles';
-
-export type PaginationProps = {
-  posts: FullPost;
-  author: string;
-  nextPage: number;
-  previousPage: number;
-  postsPerPage: number;
-};
 
 export default function Pagination({
   author,
   posts,
   nextPage,
+  postsPerPage,
   previousPage,
-}: PaginationProps) {
+}: PaginationType) {
   const postArray = posts.data;
 
   return (
@@ -43,6 +36,8 @@ export default function Pagination({
         author={author}
         nextPage={nextPage}
         previousPage={previousPage}
+        postsPerPage={postsPerPage}
+        numberOfPosts={0}
       />
     </Styled.Post>
   );
