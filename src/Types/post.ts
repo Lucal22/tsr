@@ -149,6 +149,7 @@ export type PaginationType = {
   nextPage: number;
   previousPage: number;
   postsPerPage: number;
+  numberOfPosts: number;
 };
 
 export type PageProps = PaginationType & {

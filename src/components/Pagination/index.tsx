@@ -10,6 +10,7 @@ export default function Pagination({
   nextPage,
   postsPerPage,
   previousPage,
+  numberOfPosts,
 }: PaginationType) {
   const postArray = posts.data;
 
@@ -37,7 +38,7 @@ export default function Pagination({
         nextPage={nextPage}
         previousPage={previousPage}
         postsPerPage={postsPerPage}
-        numberOfPosts={0}
+        numberOfPosts={numberOfPosts}
       />
     </Styled.Post>
   );

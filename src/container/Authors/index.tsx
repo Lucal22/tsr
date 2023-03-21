@@ -19,6 +19,7 @@ export default function Authors({
   nextPage,
   previousPage,
   postsPerPage,
+  numberOfPosts,
 }: PageProps) {
   const postAuthor = posts.data[0].attributes.author.data.attributes;
 
@@ -43,10 +44,11 @@ export default function Authors({
               />
               <Pagination
                 author={author}
+                posts={posts}
                 nextPage={nextPage}
                 previousPage={previousPage}
-                posts={posts}
                 postsPerPage={postsPerPage}
+                numberOfPosts={numberOfPosts}
               />
             </Styled.Posts>
             <SideContent>

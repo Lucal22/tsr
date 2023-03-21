@@ -13,6 +13,7 @@ export default function Author({
   nextPage,
   previousPage,
   postsPerPage,
+  numberOfPosts,
 }: PageProps) {
   const router = useRouter();
   if (router.isFallback) {
@@ -26,6 +27,7 @@ export default function Author({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Authors
+        numberOfPosts={numberOfPosts}
         nextPage={nextPage}
         previousPage={previousPage}
         author={author}
@@ -72,6 +74,17 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
     data = null;
   }
 
+  let numberOfPosts = null;
+  try {
+    numberOfPosts = await loadPosts({
+      authorSlug: {
+        eq: ctx.params.param[0] as string,
+      },
+    });
+  } catch (e) {
+    numberOfPosts = null;
+  }
+
   let mount = null;
   try {
     mount = await loadPosts({
@@ -95,11 +108,13 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
   }
   if (
     !data ||
+    !numberOfPosts ||
     !letter ||
     !mount ||
     !data.posts ||
     !mount.posts ||
     !data.posts.data.length ||
+    !numberOfPosts.posts.data.length ||
     !mount.posts.data.length
   ) {
     return {
@@ -108,6 +123,7 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
   }
   return {
     props: {
+      numberOfPosts: numberOfPosts.posts.data.length,
       posts: data.posts,
       mount: mount.posts.data[0],
       letter: letter.posts.data[0],

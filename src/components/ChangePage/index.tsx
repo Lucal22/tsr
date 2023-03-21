@@ -21,15 +21,25 @@ export default function ChangePage({
   const next = `/authors/${author}/${nextPage}`;
   const previous = `/authors/${author}/${previousPage}`;
   const hasNextPage = nextPage * postsPerPage < postsPerPage + numberOfPosts;
+  const hasPreviousPage = previousPage >= 1;
 
   return (
     <Styled.Container>
-      <Links link={previous}>
-        <CaretLeft size={32} />
-      </Links>
-      <Links link={next}>
-        <CaretRight size={32} />
-      </Links>
+      {hasPreviousPage ? (
+        <Links link={previous}>
+          <CaretLeft size={32} />
+        </Links>
+      ) : (
+        <CaretLeft size={32} color={'grey'} />
+      )}
+
+      {hasNextPage ? (
+        <Links link={next}>
+          <CaretRight size={32} />
+        </Links>
+      ) : (
+        <CaretRight size={32} color={'grey'} />
+      )}
     </Styled.Container>
   );
 }
