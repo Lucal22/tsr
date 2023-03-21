@@ -4,19 +4,20 @@ import ChangePage from '../ChangePage';
 import PostCard from '../PostCard';
 import * as Styled from './styles';
 
-export type PageContainerProps = {
+export type PaginationProps = {
   posts: FullPost;
   author: string;
   nextPage: number;
   previousPage: number;
+  postsPerPage: number;
 };
 
-export default function PageContainer({
+export default function Pagination({
   author,
   posts,
   nextPage,
   previousPage,
-}: PageContainerProps) {
+}: PaginationProps) {
   const postArray = posts.data;
 
   return (

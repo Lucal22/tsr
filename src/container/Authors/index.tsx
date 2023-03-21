@@ -7,7 +7,7 @@ import Banners from '../../components/Banners';
 import SideContent from '../../components/SideContent';
 import AuthorCard from '../../components/AuthorCard';
 import { PageProps } from '../../Types/post';
-import PageContainer from '../../components/PageContainer';
+import Pagination from '../../components/Pagination';
 //import ChangePage from '../../components/ChangePage';
 //import { loadPosts } from '../../data/load-posts';
 
@@ -18,6 +18,7 @@ export default function Authors({
   mount,
   nextPage,
   previousPage,
+  postsPerPage,
 }: PageProps) {
   const postAuthor = posts.data[0].attributes.author.data.attributes;
 
@@ -40,11 +41,12 @@ export default function Authors({
                 server={postAuthor.server}
                 char={postAuthor.ffnickname}
               />
-              <PageContainer
+              <Pagination
                 author={author}
                 nextPage={nextPage}
                 previousPage={previousPage}
                 posts={posts}
+                postsPerPage={postsPerPage}
               />
             </Styled.Posts>
             <SideContent>

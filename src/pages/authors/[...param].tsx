@@ -1,22 +1,18 @@
 import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import Authors from '../../../container/Authors';
-import {
-  defaultLoadPostVariables,
-  loadPosts,
-  RequestResponse,
-} from '../../../data/load-posts';
-import { PageProps } from '../../../Types/post';
+import Authors from '../../container/Authors';
+import { loadPosts, RequestResponse } from '../../data/load-posts';
+import { PageProps } from '../../Types/post';
 
 export default function Author({
   posts,
   mount,
   letter,
-  variables,
   author,
   nextPage,
   previousPage,
+  postsPerPage,
 }: PageProps) {
   const router = useRouter();
   if (router.isFallback) {
@@ -36,7 +32,7 @@ export default function Author({
         posts={posts}
         mount={mount}
         letter={letter}
-        variables={variables}
+        postsPerPage={postsPerPage}
       />
     </div>
   );
@@ -118,10 +114,8 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
       letter: letter.posts.data[0],
       nextPage: nextPage,
       previousPage: previousPage,
+      postsPerPage: limit,
       author: author,
-      variables: {
-        ...defaultLoadPostVariables,
-      },
     },
     revalidate: 24 * 60 * 60,
   };

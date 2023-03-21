@@ -1,5 +1,3 @@
-import { LoadPostVariables } from '../data/load-posts';
-
 export type PostID = number;
 
 export type ImageSimplifiedFormat = {
@@ -145,12 +143,15 @@ export type SinglePost = {
   meta: object;
 };
 
-export type PageProps = {
+export type Pagination = {
   posts: FullPost;
+  author: string;
+  nextPage: number;
+  previousPage: number;
+  postsPerPage: number;
+};
+
+export type PageProps = Pagination & {
   mount: PostObject;
   letter: PostObject;
-  author: string;
-  previousPage: number;
-  nextPage: number;
-  variables: LoadPostVariables;
 };
