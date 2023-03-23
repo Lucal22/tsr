@@ -22,7 +22,6 @@ export default function ChangePage({
   const previous = `/authors/${author}/${previousPage}`;
   const hasNextPage = nextPage * postsPerPage < postsPerPage + numberOfPosts;
   const hasPreviousPage = previousPage >= 1;
-
   return (
     <Styled.Container>
       {hasPreviousPage ? (

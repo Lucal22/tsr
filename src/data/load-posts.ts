@@ -29,7 +29,6 @@ export type RequestResponse = {
 export const defaultLoadPostVariables: LoadPostVariables = {
   sort: 'publishedAt:desc',
   start: 0,
-  limit: 6,
 };
 
 export const loadPosts = async (
