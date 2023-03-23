@@ -57,3 +57,20 @@ export default function PostCard({
     </Styled.Container>
   );
 }
+/*
+const postAuthor = posts.data[0].attributes.author.data.attributes;
+
+<AuthorCard
+thumbnail={postAuthor.image.data.attributes.url}
+width={postAuthor.image.data.attributes.width}
+height={postAuthor.image.data.attributes.height}
+alt={postAuthor.image.data.attributes.alternativeText}
+author={postAuthor.name}
+description={postAuthor.description}
+twitter={postAuthor.ttname}
+ttLink={postAuthor.ttlink}
+job={postAuthor.job}
+server={postAuthor.server}
+char={postAuthor.ffnickname}
+/>
+*/

@@ -6,7 +6,6 @@ import MainPost from '../../components/MainPost';
 import * as Styled from './styles';
 import PostCard from '../../components/PostCard';
 import { HomeProps } from '../../pages';
-import Banners from '../../components/Banners';
 import MorePosts from '../../components/MorePosts';
 import SideContent from '../../components/SideContent';
 

@@ -56,7 +56,7 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
 
   const author = ctx.params.param[0];
   const page = Number(ctx.params.param[1]);
-  const limit = 4;
+  const limit = 5;
   const start = (page - 1) * limit;
   const nextPage = page + 1;
   const previousPage = page - 1;
