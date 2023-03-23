@@ -5,7 +5,7 @@ import { Hover } from '../../styles/functions/hover';
 
 export const Container = styled.div`
   ${({ theme }) => css`
-    width: 100%;
+    max-width: 33rem;
     min-height: 30rem;
     max-height: 40rem;
     padding: 2rem 1rem 1rem 1rem;

@@ -156,3 +156,8 @@ export type PageProps = PaginationType & {
   mount: PostObject;
   letter: PostObject;
 };
+
+export type SideContentTypes = {
+  mount: PostObject;
+  letter: PostObject;
+};

@@ -43,7 +43,7 @@ const theme = {
     size: {
       xSmall: '360px',
       small: '480px',
-      medium: '780px',
+      medium: '768px',
       large: '1280px',
     },
   },

@@ -6,11 +6,12 @@ export const Articles = styled.div`
 
 export const Grid = styled.div`
   ${({ theme }) => css`
-    display: grid;
-    grid-template-columns: 90rem 1fr;
-    gap: ${theme.spaces.medium};
-    @media (max-width: ${theme.screen.size.medium}) {
-      display: block;
+    display: block;
+
+    @media (min-width: ${theme.screen.size.large}) {
+      display: grid;
+      grid-template-columns: 90rem 1fr;
+      gap: ${theme.spaces.medium};
     }
   `}
 `;
