@@ -152,12 +152,13 @@ export type PaginationType = {
   numberOfPosts: number;
 };
 
-export type PageProps = PaginationType & {
+export type SideContentTypes = {
   mount: PostObject;
   letter: PostObject;
 };
 
-export type SideContentTypes = {
-  mount: PostObject;
-  letter: PostObject;
+export type PageProps = PaginationType & SideContentTypes;
+
+export type PostPageTypes = SideContentTypes & {
+  posts: FullPost;
 };
