@@ -5,6 +5,11 @@ export type PostStyleProps = {
     | 'stormblood'
     | 'heavensward'
     | 'arr'
-    | 'geral';
+    | 'geral'
+    | null;
   font?: 'xSmall' | 'small';
+};
+
+export type PostStyleSkeleton = {
+  skeleton: boolean;
 };

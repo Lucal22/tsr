@@ -31,7 +31,7 @@ export default function PostCard({
 }: PostCardProps) {
   return (
     <Styled.Container categorySlug={categorySlug}>
-      <Styled.Thumbnail>
+      <Styled.Thumbnail skeleton={false}>
         <Images
           link={`/${categorySlug}/${slug}`}
           src={thumbnail}

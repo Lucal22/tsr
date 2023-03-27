@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { PostStyleProps } from '../../Types/style';
+import { PostStyleProps, PostStyleSkeleton } from '../../Types/style';
 import { Colors } from '../../styles/functions/color';
 import { PostHover } from '../../styles/functions/postHover';
 
@@ -23,8 +23,13 @@ export const Container = styled.article<PostStyleProps>`
   `}
 `;
 
-export const Thumbnail = styled.div`
-  ${({ theme }) => css`
+export const Thumbnail = styled.div<PostStyleSkeleton>`
+  ${({ theme, skeleton }) => css`
+    ${skeleton
+      ? `
+  background-color: ${theme.background.primary};
+  margin: 1rem;`
+      : null}
     width: 35rem;
     @media (max-width: ${theme.screen.size.medium}) {
       padding-left: 1rem;
