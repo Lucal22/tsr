@@ -5,8 +5,7 @@ export type PostStyleProps = {
     | 'stormblood'
     | 'heavensward'
     | 'arr'
-    | 'geral'
-    | null;
+    | 'geral';
   font?: 'xSmall' | 'small';
 };
 
