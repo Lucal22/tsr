@@ -53,6 +53,7 @@ export default function PostCard({
             categorySlug={categorySlug}
             date={date}
             author={author}
+            hideDetails={true}
             category={category}
             authorSlug={authorSlug}
             addCategory={false}

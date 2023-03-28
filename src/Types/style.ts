@@ -7,6 +7,7 @@ export type PostStyleProps = {
     | 'arr'
     | 'geral';
   font?: 'xSmall' | 'small';
+  hideDetails?: boolean;
 };
 
 export type PostStyleSkeleton = {

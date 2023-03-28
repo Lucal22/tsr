@@ -3,7 +3,7 @@ import { PostStyleProps } from '../../Types/style';
 import { Colors } from '../../styles/functions/color';
 
 export const Details = styled.p<PostStyleProps>`
-  ${({ theme, categorySlug, font }) => css`
+  ${({ theme, categorySlug, font, hideDetails }) => css`
     padding: 0.4rem 0;
     font-size: ${font == 'small'
       ? theme.fonts.size.small
@@ -12,8 +12,9 @@ export const Details = styled.p<PostStyleProps>`
     a {
       ${Colors[categorySlug](theme)}
     }
+
     @media (max-width: ${theme.screen.size.xSmall}) {
-      display: none;
+      display: ${hideDetails ? 'none' : 'block'};
     }
   `}
 `;

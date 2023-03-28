@@ -1,6 +1,8 @@
 import React from 'react';
 import Container from '../../components/Container';
+import Details from '../../components/Details';
 import Grid from '../../components/Grid';
+import Images from '../../components/Images';
 import SideContent from '../../components/SideContent';
 import { PostData, SideContentTypes } from '../../Types/post';
 import * as Styled from './styles';
@@ -15,10 +17,33 @@ export default function Post({ post, mount, letter }: PostPageProps) {
       <Container width={'large'}>
         <Styled.Content>
           <Grid>
-            <div>
-              <h1>{post.title}</h1>
-              <p>{post.content}</p>
-            </div>
+            <Styled.Post>
+              <Styled.PostHeader>
+                <Styled.Title categorySlug={post.category.data.attributes.slug}>
+                  {post.title}
+                </Styled.Title>
+                <Details
+                  categorySlug={post.category.data.attributes.slug}
+                  date={post.publishedAt}
+                  author={post.author.data.attributes.name}
+                  category={post.category.data.attributes.name}
+                  authorSlug={post.author.data.attributes.slug}
+                  addCategory={true}
+                />
+              </Styled.PostHeader>
+              <Styled.PostImage>
+                <Images
+                  width={800}
+                  height={500}
+                  src={post.image.data.attributes.url}
+                  alt={post.image.data.attributes.alternativeText}
+                />
+              </Styled.PostImage>
+
+              <Styled.PostContent
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
+            </Styled.Post>
             <SideContent mount={mount} letter={letter} />
           </Grid>
         </Styled.Content>

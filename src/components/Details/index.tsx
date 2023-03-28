@@ -16,15 +16,20 @@ export default function Details({
   authorSlug,
   date,
   author,
+  hideDetails,
   category,
   categorySlug,
   font,
   addCategory = false,
 }: DetailsProps) {
   return (
-    <Styled.Details categorySlug={categorySlug} font={font}>
+    <Styled.Details
+      hideDetails={hideDetails}
+      categorySlug={categorySlug}
+      font={font}
+    >
       Publicado por <Links link={`/authors/${authorSlug}/1`}>{author} </Links>
-      em <Date date={date} />
+      em <Date date={date} /> |
       {addCategory ? (
         <>
           {' '}
