@@ -8,7 +8,7 @@ import Pagination from '../../components/Pagination';
 
 export default function FilteredPosts({
   posts,
-  author,
+  param,
   route,
   letter,
   mount,
@@ -24,7 +24,7 @@ export default function FilteredPosts({
           <Grid>
             <Styled.Posts>
               <Pagination
-                author={author}
+                param={param}
                 route={route}
                 posts={posts}
                 nextPage={nextPage}
