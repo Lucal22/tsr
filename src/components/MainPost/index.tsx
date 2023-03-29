@@ -23,7 +23,7 @@ export default function MainPost({
   return (
     <Styled.Container>
       <Images
-        link={`/${categorySlug}/${titleSlug}`}
+        link={`/${titleSlug}`}
         src={image}
         width={570}
         height={320}
@@ -33,7 +33,7 @@ export default function MainPost({
         <Links link={`/${categorySlug}`}>{category}</Links>
       </Styled.Category>
       <Styled.Title categorySlug={categorySlug}>
-        <Links link={`/${categorySlug}/${titleSlug}`}>{title}</Links>
+        <Links link={`/${titleSlug}`}>{title}</Links>
       </Styled.Title>
     </Styled.Container>
   );

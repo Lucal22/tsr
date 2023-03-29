@@ -20,6 +20,9 @@ export const Post = styled.article`
     border-radius: 1.5rem;
     padding: 1rem;
     background-color: ${theme.background.secondary};
+    @media (min-width: ${theme.screen.size.large}) {
+      padding: 5rem;
+    }
   `}
 `;
 
@@ -36,6 +39,19 @@ export const PostHeader = styled.div`
   margin-bottom: 1.5rem;
 `;
 
-export const PostImage = styled.div``;
+export const PostImage = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+`;
 
-export const PostContent = styled.div``;
+export const PostContent = styled.div`
+  figure {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    img {
+      width: 100%;
+    }
+  }
+`;

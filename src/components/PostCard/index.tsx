@@ -33,7 +33,7 @@ export default function PostCard({
     <Styled.Container categorySlug={categorySlug}>
       <Styled.Thumbnail skeleton={false}>
         <Images
-          link={`/${categorySlug}/${slug}`}
+          link={`/${slug}`}
           src={thumbnail}
           width={350}
           height={197}
@@ -45,7 +45,7 @@ export default function PostCard({
           <Links link={`/${categorySlug}`}>{category}</Links>
         </Styled.Category>
         <Styled.Heading>
-          <Links link={`/${categorySlug}/${slug}`}>{title}</Links>
+          <Links link={`/${slug}`}>{title}</Links>
         </Styled.Heading>
         <Styled.Description>{description}</Styled.Description>
         <Styled.Details>

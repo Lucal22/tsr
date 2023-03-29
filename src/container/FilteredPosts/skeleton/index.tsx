@@ -7,7 +7,7 @@ import * as Styled from '../styles';
 
 const number = [1, 2, 3, 4, 5];
 
-export default function AuthorSkeleton() {
+export default function FilteredSkeleton() {
   return (
     <Container width={'large'}>
       <Grid>

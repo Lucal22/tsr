@@ -1,8 +1,8 @@
 import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import Authors from '../../container/Authors';
-import AuthorSkeleton from '../../container/Authors/skeleton';
+import FilteredPosts from '../../container/FilteredPosts';
+import Skeleton from '../../container/FilteredPosts/skeleton';
 import { loadPosts, RequestResponse } from '../../data/load-posts';
 import { PageProps } from '../../Types/post';
 
@@ -18,7 +18,7 @@ export default function Author({
 }: PageProps) {
   const router = useRouter();
   if (router.isFallback) {
-    return <AuthorSkeleton />;
+    return <Skeleton />;
   }
   return (
     <div>
@@ -28,7 +28,7 @@ export default function Author({
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Authors
+      <FilteredPosts
         numberOfPosts={numberOfPosts}
         nextPage={nextPage}
         previousPage={previousPage}

@@ -35,7 +35,7 @@ export default function Banners({
         <Links link={`/${categorySlug}`}>{category}</Links>
       </Styled.Category>
       <Styled.Title categorySlug={categorySlug}>
-        <Links link={`/${categorySlug}/${slug}`}>{title}</Links>
+        <Links link={`/${slug}`}>{title}</Links>
       </Styled.Title>
     </Styled.Container>
   );

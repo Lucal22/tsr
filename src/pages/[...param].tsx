@@ -1,10 +1,10 @@
 import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import AuthorSkeleton from '../../container/Authors/skeleton';
-import Post from '../../container/Post';
-import { loadPosts, RequestResponse } from '../../data/load-posts';
-import { PostPageTypes } from '../../Types/post';
+import AuthorSkeleton from '../container/FilteredPosts/skeleton';
+import Post from '../container/Post';
+import { loadPosts, RequestResponse } from '../data/load-posts';
+import { PostPageTypes } from '../Types/post';
 
 export default function PostPage({ posts, mount, letter }: PostPageTypes) {
   const router = useRouter();
@@ -32,17 +32,19 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
-  if (!ctx.params) {
+  if (!ctx.params || !ctx.params.param) {
     return {
       notFound: true,
     };
   }
 
+  const post = ctx.params.param[1];
+
   let data = null;
   try {
     data = await loadPosts({
       postSlug: {
-        eq: ctx.params.slug as string,
+        eq: post as string,
       },
     });
   } catch (e) {
