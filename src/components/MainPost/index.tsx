@@ -30,7 +30,7 @@ export default function MainPost({
         alt={alt}
       />
       <Styled.Category categorySlug={categorySlug}>
-        <Links link={`/${categorySlug}`}>{category}</Links>
+        <Links link={`/${categorySlug}/1`}>{category}</Links>
       </Styled.Category>
       <Styled.Title categorySlug={categorySlug}>
         <Links link={`/${titleSlug}`}>{title}</Links>

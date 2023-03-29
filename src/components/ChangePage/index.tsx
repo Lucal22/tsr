@@ -4,7 +4,8 @@ import Links from '../Links';
 import * as Styled from './styles';
 
 export type ChangePageProps = {
-  author: string;
+  route: string;
+  param: string;
   nextPage: number;
   previousPage: number;
   postsPerPage: number;
@@ -14,12 +15,17 @@ export type ChangePageProps = {
 export default function ChangePage({
   nextPage,
   previousPage,
-  author,
+  param,
+  route,
   postsPerPage,
   numberOfPosts,
 }: ChangePageProps) {
-  const next = `/authors/${author}/${nextPage}`;
-  const previous = `/authors/${author}/${previousPage}`;
+  const next = `/${route}${
+    route === 'authors' ? `/${param}` : null
+  }/${nextPage}`;
+  const previous = `/${route}${
+    route === 'authors' ? `/${param}` : null
+  }/${previousPage}`;
   const hasNextPage = nextPage * postsPerPage < postsPerPage + numberOfPosts;
   const hasPreviousPage = previousPage >= 1;
   return (

@@ -10,7 +10,7 @@ export default function Author({
   posts,
   mount,
   letter,
-  author,
+  param,
   nextPage,
   previousPage,
   postsPerPage,
@@ -32,7 +32,8 @@ export default function Author({
         numberOfPosts={numberOfPosts}
         nextPage={nextPage}
         previousPage={previousPage}
-        author={author}
+        param={param}
+        route="authors"
         posts={posts}
         mount={mount}
         letter={letter}
@@ -132,7 +133,7 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
       nextPage: nextPage,
       previousPage: previousPage,
       postsPerPage: limit,
-      author: author,
+      param: author,
     },
     revalidate: 24 * 60 * 60,
   };

@@ -32,7 +32,7 @@ export default function Banners({
         />
       </Styled.Thumbnail>
       <Styled.Category categorySlug={categorySlug}>
-        <Links link={`/${categorySlug}`}>{category}</Links>
+        <Links link={`/${categorySlug}/1`}>{category}</Links>
       </Styled.Category>
       <Styled.Title categorySlug={categorySlug}>
         <Links link={`/${slug}`}>{title}</Links>

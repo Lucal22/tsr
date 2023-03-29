@@ -145,7 +145,8 @@ export type SinglePost = {
 
 export type PaginationType = {
   posts: FullPost;
-  author: string;
+  param: string;
+  route: string;
   nextPage: number;
   previousPage: number;
   postsPerPage: number;

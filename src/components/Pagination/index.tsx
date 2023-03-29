@@ -5,8 +5,9 @@ import PostCard from '../PostCard';
 import * as Styled from './styles';
 
 export default function Pagination({
-  author,
+  param,
   posts,
+  route,
   nextPage,
   postsPerPage,
   previousPage,
@@ -34,7 +35,8 @@ export default function Pagination({
         );
       })}
       <ChangePage
-        author={author}
+        route={route}
+        param={param}
         nextPage={nextPage}
         previousPage={previousPage}
         postsPerPage={postsPerPage}

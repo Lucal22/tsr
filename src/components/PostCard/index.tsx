@@ -42,7 +42,7 @@ export default function PostCard({
       </Styled.Thumbnail>
       <Styled.CardContent>
         <Styled.Category categorySlug={categorySlug}>
-          <Links link={`/${categorySlug}`}>{category}</Links>
+          <Links link={`/${categorySlug}/1`}>{category}</Links>
         </Styled.Category>
         <Styled.Heading>
           <Links link={`/${slug}`}>{title}</Links>
