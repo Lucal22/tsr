@@ -1,6 +1,5 @@
 import React from 'react';
 import Container from '../Container';
-//import Heading from '../Heading';
 import * as Styled from './styles';
 import { img } from '../../assets/index';
 import Nav from '../Nav';
