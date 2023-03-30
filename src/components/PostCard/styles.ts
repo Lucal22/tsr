@@ -5,6 +5,7 @@ import { PostHover } from '../../styles/functions/postHover';
 
 export const Container = styled.article<PostStyleProps>`
   ${({ theme, categorySlug }) => css`
+    width: 100%;
     position: relative;
     display: flex;
     color: ${theme.colors.primary};
@@ -30,7 +31,7 @@ export const Thumbnail = styled.div<PostStyleSkeleton>`
   background-color: ${theme.background.primary};
   margin: 1rem;`
       : null}
-    width: 35rem;
+    max-width: 35rem;
     @media (max-width: ${theme.screen.size.medium}) {
       padding-left: 1rem;
       display: flex;
@@ -41,11 +42,12 @@ export const Thumbnail = styled.div<PostStyleSkeleton>`
 
 export const CardContent = styled.div`
   ${({ theme }) => css`
-    width: 55rem;
-    height: 19.7rem;
+    width: 100%;
+    height: 14rem;
     padding: 1rem;
-    @media (max-width: ${theme.screen.size.small}) {
-      width: 30rem;
+    @media (min-width: ${theme.screen.size.medium}) {
+      max-width: 55rem;
+      height: 19.7rem;
     }
   `}
 `;

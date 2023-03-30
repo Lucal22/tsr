@@ -9,12 +9,17 @@ import { HomeProps } from '../../pages';
 import MorePosts from '../../components/MorePosts';
 import SideContent from '../../components/SideContent';
 
-export default function HomePage({ posts, mount, letter }: HomeProps) {
-  const [morePosts, setMorePosts] = useState<number>(6);
+export default function HomePage({
+  posts,
+  mainPosts,
+  mount,
+  letter,
+}: HomeProps) {
+  const [morePosts, setMorePosts] = useState<number>(5);
 
-  const postArray = posts.data;
-  const lastPost = posts.data[0].attributes;
-  const lastPost2 = posts.data[1].attributes;
+  const postArray = posts.data.slice(0, morePosts);
+  const lastPost = mainPosts.data[0].attributes;
+  const lastPost2 = mainPosts.data[1].attributes;
 
   return (
     <Styled.Container>
@@ -59,23 +64,14 @@ export default function HomePage({ posts, mount, letter }: HomeProps) {
                   />
                 );
               })}
-            </Styled.Posts>
-            <Styled.MorePostsTop>
               <MorePosts
                 morePosts={morePosts}
                 limit={20}
                 setMorePosts={setMorePosts}
               />
-            </Styled.MorePostsTop>
+            </Styled.Posts>
             <SideContent mount={mount} letter={letter} />
           </Grid>
-          <Styled.MorePostsBot>
-            <MorePosts
-              morePosts={morePosts}
-              limit={20}
-              setMorePosts={setMorePosts}
-            />
-          </Styled.MorePostsBot>
         </Styled.Content>
       </Container>
     </Styled.Container>

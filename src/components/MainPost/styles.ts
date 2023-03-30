@@ -11,8 +11,11 @@ export const Container = styled.article`
     border-radius: 0.5rem;
     padding: 2rem 2rem 1rem 2rem;
     color: ${theme.colors.primary};
-    @media (min-width: ${theme.screen.size.small}) {
-      height: 46rem;
+    @media (min-width: ${theme.screen.size.medium}) {
+      min-height: 35rem;
+    }
+    @media (min-width: ${theme.screen.size.large}) {
+      min-height: 45rem;
     }
   `}
 `;
@@ -25,10 +28,14 @@ export const Category = styled.span<PostStyleProps>`
   `}
 `;
 
-export const Title = styled.h2<PostStyleProps>`
+export const Title = styled.h1<PostStyleProps>`
   ${({ theme, categorySlug }) => css`
+    font-size: ${theme.fonts.size.heading};
     a {
       ${Hover[categorySlug](theme)}
+    }
+    @media (min-width: ${theme.screen.size.medium}) {
+      font-size: ${theme.fonts.size.medium};
     }
   `}
 `;

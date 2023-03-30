@@ -29,11 +29,11 @@ export default function Details({
       font={font}
     >
       Publicado por <Links link={`/authors/${authorSlug}/1`}>{author} </Links>
-      em <Date date={date} /> |
+      em <Date date={date} />
       {addCategory ? (
         <>
-          {' '}
-          <Links link={`/${categorySlug}/1`}>{category}</Links>
+          {' | '}
+          <Links link={`/${categorySlug}/1`}> {category}</Links>
         </>
       ) : null}
     </Styled.Details>
