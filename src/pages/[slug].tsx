@@ -1,7 +1,7 @@
 import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import Skeleton from '../container/FilteredPosts/skeleton';
+import Skeleton from '../container/Post/Skeleton';
 import Post from '../container/Post';
 import { loadPosts, RequestResponse } from '../data/load-posts';
 import { PostPageTypes } from '../Types/post';

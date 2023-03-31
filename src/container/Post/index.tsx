@@ -6,6 +6,7 @@ import Images from '../../components/Images';
 import SideContent from '../../components/SideContent';
 import { PostData, SideContentTypes } from '../../Types/post';
 import * as Styled from './styles';
+import Links from '../../components/Links';
 
 type PostPageProps = SideContentTypes & {
   post: PostData;
@@ -30,6 +31,15 @@ export default function Post({ post, mount, letter }: PostPageProps) {
                   authorSlug={post.author.data.attributes.slug}
                   addCategory={true}
                 />
+                <Styled.TagSection>
+                  {post.tags.data.map((i) => (
+                    <Styled.PostTags key={i.attributes.name}>
+                      <Links link={`/${i.attributes.slug}/1`}>
+                        {i.attributes.name}
+                      </Links>
+                    </Styled.PostTags>
+                  ))}
+                </Styled.TagSection>
               </Styled.PostHeader>
               <Styled.PostImage>
                 <Images

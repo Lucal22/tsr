@@ -17,7 +17,7 @@ export const Container = styled.div`
       max-width: 30rem;
     }
     @media (max-width: ${theme.screen.size.xSmall}) {
-      min-height: 20rem;
+      min-height: 24rem;
       max-height: 26rem;
     }
   `}
