@@ -1,12 +1,12 @@
 import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import FilteredPosts from '../container/FilteredPosts';
-import Skeleton from '../container/FilteredPosts/skeleton';
-import { loadPosts, RequestResponse } from '../data/load-posts';
-import { PageProps } from '../Types/post';
+import FilteredPosts from '../../container/FilteredPosts';
+import Skeleton from '../../container/FilteredPosts/skeleton';
+import { loadPosts, RequestResponse } from '../../data/load-posts';
+import { PageProps } from '../../Types/post';
 
-export default function ExpansionPage({
+export default function CategoryPage({
   posts,
   mount,
   letter,
@@ -20,7 +20,7 @@ export default function ExpansionPage({
   if (router.isFallback) {
     return <Skeleton />;
   }
-  const post = posts.data[0].attributes.category.data.attributes.name;
+  const post = posts.data[0].attributes.tags.data[0].attributes.name;
   return (
     <div>
       <Head>
@@ -57,7 +57,7 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
     };
   }
 
-  const category = ctx.params.param[0];
+  const tag = ctx.params.param[0];
   const page = Number(ctx.params.param[1]);
   const limit = 5;
   const start = (page - 1) * limit;
@@ -67,8 +67,8 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
   let data = null;
   try {
     data = await loadPosts({
-      categorySlug: {
-        eq: category as string,
+      tagSlug: {
+        contains: tag as string,
       },
 
       start: start,
@@ -81,8 +81,8 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
   let numberOfPosts = null;
   try {
     numberOfPosts = await loadPosts({
-      categorySlug: {
-        eq: category as string,
+      tagSlug: {
+        contains: tag as string,
       },
     });
   } catch (e) {
@@ -134,7 +134,7 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
       nextPage: nextPage,
       previousPage: previousPage,
       postsPerPage: limit,
-      param: category,
+      param: tag,
     },
     revalidate: 24 * 60 * 60,
   };
