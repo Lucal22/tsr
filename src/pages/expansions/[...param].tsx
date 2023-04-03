@@ -33,7 +33,7 @@ export default function ExpansionPage({
         nextPage={nextPage}
         previousPage={previousPage}
         param={param}
-        route={param}
+        route={'expansions'}
         posts={posts}
         mount={mount}
         letter={letter}

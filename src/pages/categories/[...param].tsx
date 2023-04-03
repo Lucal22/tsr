@@ -33,7 +33,7 @@ export default function CategoryPage({
         nextPage={nextPage}
         previousPage={previousPage}
         param={param}
-        route={param}
+        route={'categories'}
         posts={posts}
         mount={mount}
         letter={letter}

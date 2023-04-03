@@ -20,12 +20,8 @@ export default function ChangePage({
   postsPerPage,
   numberOfPosts,
 }: ChangePageProps) {
-  const next = `/${route}${
-    route === 'authors' ? `/${param}` : null
-  }/${nextPage}`;
-  const previous = `/${route}${
-    route === 'authors' ? `/${param}` : null
-  }/${previousPage}`;
+  const next = `/${route}/${param}/${nextPage}`;
+  const previous = `/${route}/${param}/${previousPage}`;
   const hasNextPage = nextPage * postsPerPage < postsPerPage + numberOfPosts;
   const hasPreviousPage = previousPage >= 1;
   return (
