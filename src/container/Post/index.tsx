@@ -7,6 +7,7 @@ import SideContent from '../../components/SideContent';
 import { PostData, SideContentTypes } from '../../Types/post';
 import * as Styled from './styles';
 import Links from '../../components/Links';
+import Comments from '../../components/Comments';
 
 type PostPageProps = SideContentTypes & {
   post: PostData;
@@ -53,6 +54,7 @@ export default function Post({ post, mount, letter }: PostPageProps) {
               <Styled.PostContent
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
+              <Comments slug={post.slug} title={post.title} />
             </Styled.Post>
             <SideContent mount={mount} letter={letter} />
           </Grid>
