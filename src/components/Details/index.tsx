@@ -33,7 +33,7 @@ export default function Details({
       {addCategory ? (
         <>
           {' | '}
-          <Links link={`/${categorySlug}/1`}> {category}</Links>
+          <Links link={`/expansions/${categorySlug}/1`}> {category}</Links>
         </>
       ) : null}
     </Styled.Details>

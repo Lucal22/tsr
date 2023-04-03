@@ -1,10 +1,10 @@
 import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import FilteredPosts from '../container/FilteredPosts';
-import Skeleton from '../container/FilteredPosts/skeleton';
-import { loadPosts, RequestResponse } from '../data/load-posts';
-import { PageProps } from '../Types/post';
+import FilteredPosts from '../../container/FilteredPosts';
+import Skeleton from '../../container/FilteredPosts/skeleton';
+import { loadPosts, RequestResponse } from '../../data/load-posts';
+import { PageProps } from '../../Types/post';
 
 export default function ExpansionPage({
   posts,

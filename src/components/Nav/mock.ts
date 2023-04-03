@@ -49,27 +49,27 @@ const list = [
       topics: [
         {
           children: 'Endwalker',
-          link: '/endwalker',
+          link: '/expansions/endwalker/1',
           newTab: false,
         },
         {
           children: 'Shadowbringers',
-          link: '/shadowbringers',
+          link: '/expansions/shadowbringers/1',
           newTab: false,
         },
         {
           children: 'Stormblood',
-          link: '/stormblood',
+          link: '/expansions/stormblood/1',
           newTab: false,
         },
         {
           children: 'Heavensward',
-          link: '/heavensward',
+          link: '/expansions/heavensward/1',
           newTab: false,
         },
         {
           children: 'A realm reborn',
-          link: '/arr',
+          link: '/expansions/arr/1',
           newTab: false,
         },
       ],
