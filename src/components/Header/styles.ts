@@ -10,19 +10,13 @@ export const Header = styled.header`
   `}
 `;
 
-export const Logo = styled.div`
-  max-width: 33.2rem;
-  @media (max-width: 1000px) {
-    display: none;
-  }
-`;
-
 export const Flex = styled.div`
   ${({ theme }) => css`
     padding: 1rem 0;
     gap: ${theme.spaces.large};
     display: flex;
     align-items: center;
+    justify-content: center;
     @media (max-width: 1000px) {
       justify-content: center;
     }
@@ -30,4 +24,11 @@ export const Flex = styled.div`
       padding-left: 30px;
     } ;
   `}
+`;
+
+export const Logo = styled.div`
+  max-width: 33.2rem;
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `;
