@@ -17,7 +17,7 @@ ${({ theme }) => css`
     font-size: 1.6rem;
     line-height: 1.5;
     width: 100%;
-    min-height: 200vh;
+    min-height: 100vh;
     font-family: ${theme.fonts.style.defaultFont};
     background-color: ${theme.background.primary};
   }
