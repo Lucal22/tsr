@@ -1,5 +1,6 @@
 import React from 'react';
 import * as Styled from './styles';
+import Links from '../Links';
 
 export type MorePostsProps = {
   morePosts: number;
@@ -22,7 +23,15 @@ export default function MorePosts({
           setMorePosts(morePosts < limit ? morePosts + 4 : morePosts);
         }}
       >
-        <p>{morePosts < limit ? 'Clique para mais posts' : ''}</p>
+        <p>
+          {morePosts < limit ? (
+            'Clique para mais posts'
+          ) : (
+            <>
+              Veja mais na página <Links link="/posts">Posts</Links>
+            </>
+          )}
+        </p>
       </Styled.Button>
       <Styled.Line />
     </Styled.Container>

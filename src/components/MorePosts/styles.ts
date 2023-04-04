@@ -37,6 +37,9 @@ export const Button = styled.button<MorePostsStyleProps>`
         width: 17.6rem;
         font-size: ${theme.fonts.size.xSmall};
       }
+      a {
+        color: ${theme.colors.blue};
+      }
     }
   `}
 `;
