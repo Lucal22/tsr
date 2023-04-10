@@ -56,7 +56,6 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
       notFound: true,
     };
   }
-  console.log(ctx);
 
   const page = Number(ctx.params.slug);
   const limit = 5;
