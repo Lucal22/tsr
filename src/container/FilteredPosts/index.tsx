@@ -5,6 +5,7 @@ import * as Styled from './styles';
 import SideContent from '../../components/SideContent';
 import { PageProps } from '../../Types/post';
 import Pagination from '../../components/Pagination';
+import Select from '../../components/Select';
 
 export default function FilteredPosts({
   posts,
@@ -23,6 +24,7 @@ export default function FilteredPosts({
         <Styled.Content>
           <Grid>
             <Styled.Posts>
+              <Select />
               <Pagination
                 param={param}
                 route={route}

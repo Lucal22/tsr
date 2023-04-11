@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 import AdBanner from '../components/AdBanner';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [theme, setTheme] = useState(light);
+  const [theme, setTheme] = useState(dark);
 
   useEffect(() => {
     const typeTheme = localStorage.getItem('theme');

@@ -7,7 +7,7 @@ const list = [
     },
     {
       children: 'Categorias',
-      link: '/categories',
+      link: '/categories/guides/1',
       newTab: false,
     },
     {
