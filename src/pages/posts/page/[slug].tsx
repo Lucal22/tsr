@@ -20,6 +20,7 @@ export default function ExpansionPage({
   if (router.isFallback) {
     return <Skeleton />;
   }
+
   const post = posts.data[0].attributes.category.data.attributes.name;
   return (
     <div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { PaginationType } from '../../Types/post';
 import ChangePage from '../ChangePage';
 import PostCard from '../PostCard';
@@ -13,7 +13,20 @@ export default function Pagination({
   previousPage,
   numberOfPosts,
 }: PaginationType) {
-  const postArray = posts.data;
+  const [tags, setTags] = useState('guides');
+  const [expansion, setExpansion] = useState('endwalker');
+
+  const filterTags = posts.data.map((item) =>
+    item.attributes.tags.data.filter(
+      (filter) => filter.attributes.slug == tags,
+    ),
+  );
+
+  console.log(filterTags);
+
+  const postArray = posts.data.filter(
+    (filter) => filter.attributes.category.data.attributes.slug == expansion,
+  );
 
   return (
     <Styled.Post>
