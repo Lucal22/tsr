@@ -29,7 +29,7 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async () => {
   try {
     mount = await loadPosts({
       tagSlug: {
-        contains: 'mount' as string,
+        eq: 'mount' as string,
       },
     });
   } catch (e) {
@@ -40,7 +40,7 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async () => {
   try {
     letter = await loadPosts({
       tagSlug: {
-        contains: 'live-letter' as string,
+        eq: 'live-letter' as string,
       },
     });
   } catch (e) {

@@ -20,7 +20,7 @@ export default function CategoryPage({
   if (router.isFallback) {
     return <Skeleton />;
   }
-  const post = posts.data[0].attributes.tags.data[0].attributes.name;
+  const post = posts.data[0].attributes.tags.data.attributes.name;
   return (
     <div>
       <Head>
@@ -68,7 +68,7 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
   try {
     data = await loadPosts({
       tagSlug: {
-        contains: tag as string,
+        eq: tag as string,
       },
 
       start: start,
@@ -82,7 +82,7 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
   try {
     numberOfPosts = await loadPosts({
       tagSlug: {
-        contains: tag as string,
+        eq: tag as string,
       },
     });
   } catch (e) {
@@ -93,7 +93,7 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
   try {
     mount = await loadPosts({
       tagSlug: {
-        contains: 'mount' as string,
+        eq: 'mount' as string,
       },
     });
   } catch (e) {
@@ -104,7 +104,7 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
   try {
     letter = await loadPosts({
       tagSlug: {
-        contains: 'live-letter' as string,
+        eq: 'live-letter' as string,
       },
     });
   } catch (e) {
