@@ -16,14 +16,6 @@ export default function Pagination({
   const [tags, setTags] = useState('guides');
   const [expansion, setExpansion] = useState('endwalker');
 
-  const filterTags = posts.data.map((item) =>
-    item.attributes.tags.data.filter(
-      (filter) => filter.attributes.slug == tags,
-    ),
-  );
-
-  console.log(filterTags);
-
   const postArray = posts.data.filter(
     (filter) => filter.attributes.category.data.attributes.slug == expansion,
   );

@@ -13,7 +13,7 @@ export type ContainVariables = {
 
 export type LoadPostVariables = {
   categorySlug?: EqualVariables;
-  tagSlug?: ContainVariables;
+  tagSlug?: EqualVariables;
   postSlug?: EqualVariables;
   postSearch?: ContainVariables;
   authorSlug?: EqualVariables;

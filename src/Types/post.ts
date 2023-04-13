@@ -18,16 +18,14 @@ export type ImageSimplifiedFormat = {
 };
 
 export type PostTags = {
-  data: [
-    {
-      id: PostID;
-      attributes: {
-        name: string;
-        slug: string;
-        image: ImageSimplifiedFormat;
-      };
-    },
-  ];
+  data: {
+    id: PostID;
+    attributes: {
+      name: string;
+      slug: string;
+      image: ImageSimplifiedFormat;
+    };
+  };
 };
 
 export type PostAuthor = {
