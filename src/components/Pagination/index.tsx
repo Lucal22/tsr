@@ -4,7 +4,6 @@ import ChangePage from '../ChangePage';
 import PostCard from '../PostCard';
 import * as Styled from './styles';
 import Select from '../Select';
-import postValue from './function';
 
 export default function Pagination({
   param,
@@ -25,7 +24,15 @@ export default function Pagination({
     setTag(value);
   }
 
-  const postArray = postValue(tag, expansion, posts.data);
+  const postArray = posts.data.filter(
+    (filter) =>
+      (expansion !== 'all'
+        ? filter.attributes.category.data.attributes.slug == expansion
+        : filter.attributes.category.data.attributes.slug) &&
+      (tag !== 'all'
+        ? filter.attributes.tag.data.attributes.slug == tag
+        : filter.attributes.tag.data.attributes.slug),
+  );
 
   return (
     <Styled.Post>
