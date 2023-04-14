@@ -20,7 +20,7 @@ export default function CategoryPage({
   if (router.isFallback) {
     return <Skeleton />;
   }
-  const post = posts.data[0].attributes.tags.data.attributes.name;
+  const post = posts.data[0].attributes.tag.data.attributes.name;
   return (
     <div>
       <Head>
@@ -93,7 +93,7 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
   try {
     mount = await loadPosts({
       tagSlug: {
-        eq: 'mount' as string,
+        eq: 'mounts' as string,
       },
     });
   } catch (e) {
