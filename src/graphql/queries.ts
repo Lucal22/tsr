@@ -22,7 +22,7 @@ export const GRAPHQL_POST_QUERY = gql`
         title: $postSearch
         category: { slug: $categorySlug }
         author: { slug: $authorSlug }
-        tags: { slug: $tagSlug }
+        tag: { slug: $tagSlug }
       }
     ) {
       data {
@@ -68,7 +68,7 @@ export const GRAPHQL_TAGS_QUERY = gql`
   ${GRAPHQL_POST_FRAGMENTS}
 
   query GET_TAGS {
-    tags {
+    tag {
       data {
         attributes {
           ...tagPostContent

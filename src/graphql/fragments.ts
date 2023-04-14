@@ -60,7 +60,7 @@ export const GRAPHQL_POST_FRAGMENTS = gql`
           }
         }
       }
-      tags {
+      tag {
         data {
           id
           attributes {

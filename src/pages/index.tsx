@@ -43,6 +43,7 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async () => {
     });
   } catch (e) {
     data = null;
+    console.log(e);
   }
 
   let postData = null;
@@ -52,6 +53,7 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async () => {
     });
   } catch (e) {
     postData = null;
+    console.log(e);
   }
 
   let mount = null;
@@ -63,6 +65,7 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async () => {
     });
   } catch (e) {
     mount = null;
+    console.log(e);
   }
 
   let letter = null;
