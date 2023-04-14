@@ -53,6 +53,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
   if (!ctx.params) {
+    console.log('erro');
     return {
       notFound: true,
     };
@@ -72,6 +73,7 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
     });
   } catch (e) {
     data = null;
+    console.log(e);
   }
 
   let numberOfPosts = null;
@@ -79,17 +81,19 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
     numberOfPosts = await loadPosts();
   } catch (e) {
     numberOfPosts = null;
+    console.log(e);
   }
 
   let mount = null;
   try {
     mount = await loadPosts({
       tagSlug: {
-        eq: 'mount' as string,
+        eq: 'mounts' as string,
       },
     });
   } catch (e) {
     mount = null;
+    console.log(e);
   }
 
   let letter = null;
@@ -101,6 +105,7 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
     });
   } catch (e) {
     letter = null;
+    console.log(e);
   }
   if (
     !data ||
@@ -113,6 +118,12 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
     !numberOfPosts.posts.data.length ||
     !mount.posts.data.length
   ) {
+    console.log(
+      'erro aqui',
+      data?.posts.data.length,
+      numberOfPosts?.posts.data.length,
+      mount?.posts.data.length,
+    );
     return {
       notFound: true,
     };

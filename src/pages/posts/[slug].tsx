@@ -53,7 +53,7 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
   try {
     mount = await loadPosts({
       tagSlug: {
-        eq: 'mount' as string,
+        eq: 'mounts' as string,
       },
     });
   } catch (e) {

@@ -13,11 +13,13 @@ export default function Pagination({
   previousPage,
   numberOfPosts,
 }: PaginationType) {
-  const [tags, setTags] = useState('guides');
+  const [tag, setTag] = useState('live-letter');
   const [expansion, setExpansion] = useState('endwalker');
 
   const postArray = posts.data.filter(
-    (filter) => filter.attributes.category.data.attributes.slug == expansion,
+    (filter) =>
+      filter.attributes.category.data.attributes.slug == expansion &&
+      filter.attributes.tag.data.attributes.slug == tag,
   );
 
   return (

@@ -17,7 +17,7 @@ export type ImageSimplifiedFormat = {
   };
 };
 
-export type PostTags = {
+export type PostTag = {
   data: {
     id: PostID;
     attributes: {
@@ -120,7 +120,7 @@ export type PostData = {
   publishedAt: string;
   author: PostAuthor;
   category: PostCategory;
-  tags: PostTags;
+  tag: PostTag;
   image: PostCover;
   carousels: PostCover; //corrigir
 };
