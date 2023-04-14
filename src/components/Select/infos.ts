@@ -10,5 +10,5 @@ export const categories = [
   { category: 'Todos', slug: 'all' },
   { category: 'Guias', slug: 'guides' },
   { category: 'Montarias', slug: 'mounts' },
-  { category: 'Live Letter', slug: 'lletter' },
+  { category: 'Live Letter', slug: 'live-letter' },
 ];

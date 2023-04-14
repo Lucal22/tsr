@@ -47,7 +47,7 @@ export const TagSection = styled.div`
   margin-top: 1rem;
 `;
 
-export const PostTags = styled.span`
+export const PostTag = styled.span`
   ${({ theme }) => css`
     a {
       display: block;

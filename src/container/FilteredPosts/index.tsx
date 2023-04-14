@@ -24,7 +24,6 @@ export default function FilteredPosts({
         <Styled.Content>
           <Grid>
             <Styled.Posts>
-              <Select />
               <Pagination
                 param={param}
                 route={route}

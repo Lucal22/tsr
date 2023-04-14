@@ -67,10 +67,7 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
 
   let data = null;
   try {
-    data = await loadPosts({
-      start: start,
-      limit: limit,
-    });
+    data = await loadPosts();
   } catch (e) {
     data = null;
     console.log(e);

@@ -3,6 +3,8 @@ import { PaginationType } from '../../Types/post';
 import ChangePage from '../ChangePage';
 import PostCard from '../PostCard';
 import * as Styled from './styles';
+import Select from '../Select';
+import postValue from './function';
 
 export default function Pagination({
   param,
@@ -13,17 +15,24 @@ export default function Pagination({
   previousPage,
   numberOfPosts,
 }: PaginationType) {
-  const [tag, setTag] = useState('live-letter');
-  const [expansion, setExpansion] = useState('endwalker');
+  const [tag, setTag] = useState('all');
+  const [expansion, setExpansion] = useState('all');
 
-  const postArray = posts.data.filter(
-    (filter) =>
-      filter.attributes.category.data.attributes.slug == expansion &&
-      filter.attributes.tag.data.attributes.slug == tag,
-  );
+  function handleExpansion(value: string) {
+    setExpansion(value);
+  }
+  function handleCategory(value: string) {
+    setTag(value);
+  }
+
+  const postArray = postValue(tag, expansion, posts.data);
 
   return (
     <Styled.Post>
+      <Select
+        handleExpansion={handleExpansion}
+        handleCategory={handleCategory}
+      />
       {postArray.map((post) => {
         return (
           <PostCard

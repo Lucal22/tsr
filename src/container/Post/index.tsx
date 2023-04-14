@@ -33,11 +33,13 @@ export default function Post({ post, mount, letter }: PostPageProps) {
                   addCategory={true}
                 />
                 <Styled.TagSection>
-                  <Links
-                    link={`/categories/${post.tags.data.attributes.slug}/1`}
-                  >
-                    {post.tags.data.attributes.name}
-                  </Links>
+                  <Styled.PostTag>
+                    <Links
+                      link={`/categories/${post.tag.data.attributes.slug}/1`}
+                    >
+                      {post.tag.data.attributes.name}
+                    </Links>
+                  </Styled.PostTag>
                 </Styled.TagSection>
               </Styled.PostHeader>
               <Styled.PostImage>
