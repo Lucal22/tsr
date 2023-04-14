@@ -5,7 +5,6 @@ import * as Styled from './styles';
 import SideContent from '../../components/SideContent';
 import { PageProps } from '../../Types/post';
 import Pagination from '../../components/Pagination';
-import Select from '../../components/Select';
 
 export default function FilteredPosts({
   posts,
