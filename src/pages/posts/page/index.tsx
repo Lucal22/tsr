@@ -44,41 +44,12 @@ export default function ExpansionPage({
   );
 }
 
-export const getStaticPaths = async () => {
-  return {
-    paths: [],
-    fallback: true,
-  };
-};
-
-export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
-  if (!ctx.params) {
-    console.log('erro');
-    return {
-      notFound: true,
-    };
-  }
-
-  const page = Number(ctx.params.slug);
-  const limit = 5;
-  const start = (page - 1) * limit;
-  const nextPage = page + 1;
-  const previousPage = page - 1;
-
+export const getStaticProps: GetStaticProps<RequestResponse> = async () => {
   let data = null;
   try {
     data = await loadPosts();
   } catch (e) {
     data = null;
-    console.log(e);
-  }
-
-  let numberOfPosts = null;
-  try {
-    numberOfPosts = await loadPosts();
-  } catch (e) {
-    numberOfPosts = null;
-    console.log(e);
   }
 
   let mount = null;
@@ -90,7 +61,6 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
     });
   } catch (e) {
     mount = null;
-    console.log(e);
   }
 
   let letter = null;
@@ -106,35 +76,22 @@ export const getStaticProps: GetStaticProps<RequestResponse> = async (ctx) => {
   }
   if (
     !data ||
-    !numberOfPosts ||
     !letter ||
     !mount ||
     !data.posts ||
     !mount.posts ||
     !data.posts.data.length ||
-    !numberOfPosts.posts.data.length ||
     !mount.posts.data.length
   ) {
-    console.log(
-      'erro aqui',
-      data?.posts.data.length,
-      numberOfPosts?.posts.data.length,
-      mount?.posts.data.length,
-    );
     return {
       notFound: true,
     };
   }
   return {
     props: {
-      numberOfPosts: numberOfPosts.posts.data.length,
       posts: data.posts,
       mount: mount.posts.data[0],
       letter: letter.posts.data[0],
-      nextPage: nextPage,
-      previousPage: previousPage,
-      postsPerPage: limit,
-      param: 'page',
     },
     revalidate: 24 * 60 * 60,
   };

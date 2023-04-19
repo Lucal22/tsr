@@ -5,23 +5,26 @@ import PostCard from '../PostCard';
 import * as Styled from './styles';
 import Select from '../Select';
 
-export default function Pagination({
-  param,
-  posts,
-  route,
-  nextPage,
-  postsPerPage,
-  previousPage,
-  numberOfPosts,
-}: PaginationType) {
+export default function Pagination({ posts }: PaginationType) {
   const [tag, setTag] = useState('all');
   const [expansion, setExpansion] = useState('all');
+  const [start, setStart] = useState(0);
+  const [limit, setLimit] = useState(5);
 
   function handleExpansion(value: string) {
     setExpansion(value);
   }
   function handleCategory(value: string) {
     setTag(value);
+  }
+
+  function nextPage() {
+    setStart(start + 5);
+    setLimit(limit + 5);
+  }
+  function previousPage() {
+    setStart(start - 5);
+    setLimit(limit - 5);
   }
 
   const postArray = posts.data.filter(
@@ -33,6 +36,9 @@ export default function Pagination({
         ? filter.attributes.tag.data.attributes.slug == tag
         : filter.attributes.tag.data.attributes.slug),
   );
+  const len = postArray.length;
+
+  const showPosts = len > 5 ? postArray.slice(start, limit) : postArray;
 
   return (
     <Styled.Post>
@@ -40,7 +46,7 @@ export default function Pagination({
         handleExpansion={handleExpansion}
         handleCategory={handleCategory}
       />
-      {postArray.map((post) => {
+      {showPosts.map((post) => {
         return (
           <PostCard
             key={post.id}
@@ -58,12 +64,11 @@ export default function Pagination({
         );
       })}
       <ChangePage
-        route={route}
-        param={param}
+        start={start}
+        len={len}
+        limit={limit}
         nextPage={nextPage}
         previousPage={previousPage}
-        postsPerPage={postsPerPage}
-        numberOfPosts={numberOfPosts}
       />
     </Styled.Post>
   );
