@@ -2,7 +2,7 @@ const list = [
   [
     {
       children: 'Posts',
-      link: '/posts/page/1',
+      link: '/posts/page/',
       newTab: false,
     },
     {

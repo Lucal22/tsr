@@ -1,30 +1,20 @@
 import React, { useState } from 'react';
 import { PaginationType } from '../../Types/post';
-import ChangePage from '../ChangePage';
 import PostCard from '../PostCard';
 import * as Styled from './styles';
 import Select from '../Select';
+import MorePosts from '../MorePosts';
 
 export default function Pagination({ posts }: PaginationType) {
   const [tag, setTag] = useState('all');
   const [expansion, setExpansion] = useState('all');
-  const [start, setStart] = useState(0);
-  const [limit, setLimit] = useState(5);
+  const [morePosts, setMorePosts] = useState<number>(5);
 
   function handleExpansion(value: string) {
     setExpansion(value);
   }
   function handleCategory(value: string) {
     setTag(value);
-  }
-
-  function nextPage() {
-    setStart(start + 5);
-    setLimit(limit + 5);
-  }
-  function previousPage() {
-    setStart(start - 5);
-    setLimit(limit - 5);
   }
 
   const postArray = posts.data.filter(
@@ -38,7 +28,7 @@ export default function Pagination({ posts }: PaginationType) {
   );
   const len = postArray.length;
 
-  const showPosts = len > 5 ? postArray.slice(start, limit) : postArray;
+  const showPosts = postArray.slice(0, morePosts);
 
   return (
     <Styled.Post>
@@ -63,13 +53,13 @@ export default function Pagination({ posts }: PaginationType) {
           />
         );
       })}
-      <ChangePage
-        start={start}
-        len={len}
-        limit={limit}
-        nextPage={nextPage}
-        previousPage={previousPage}
-      />
+      {len > 5 ? (
+        <MorePosts
+          morePosts={morePosts}
+          setMorePosts={setMorePosts}
+          limit={len}
+        />
+      ) : null}
     </Styled.Post>
   );
 }
