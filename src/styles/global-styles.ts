@@ -26,5 +26,14 @@ ${({ theme }) => css`
     color: inherit;
     text-decoration: none;
   }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    background-color: ${theme.background.secondary};
+  }
+  ::-webkit-scrollbar-thumb {
+    background: ${theme.background.primary};
+    border-radius: 10px;
+  }
 `}
 `;
