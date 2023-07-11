@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-import { PostStyleProps } from '../../Types/style';
-import { Colors } from '../../styles/functions/color';
-import { Hover } from '../../styles/functions/hover';
+import { PostStyleProps } from '../../../../Types/style';
+import { Colors } from '../../../../styles/functions/color';
+import { Hover } from '../../../../styles/functions/hover';
 
 export const Container = styled.article`
   ${({ theme }) => css`

@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import * as Styled from './styles';
 import { motion } from 'framer-motion';
 
-import { img } from '../../assets/index';
+import { img } from '../../../../assets/index';
 import Image from 'next/image';
-import list from '../Nav/mock';
-import Links from '../Links';
+import list from '../Nav/links';
+import Links from '../../../../components/Links';
 
 export type MenuProps = {
   children: React.ReactNode;

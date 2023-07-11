@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import { renderTheme } from '../../utils/renderTheme';
+import { renderTheme } from '../../../../utils/renderTheme';
 import Menu from './index';
 
 describe('<Menu />', () => {

@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/Nav/mock.tss", "src/styles/theme.tss", "src/styles/theme.tss"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/container/Header/components/Nav/mock.tss", "src/styles/theme.tss", "src/styles/theme.tss"],
   "exclude": ["node_modules"]
 }

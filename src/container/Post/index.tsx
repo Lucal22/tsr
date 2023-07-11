@@ -35,7 +35,7 @@ export default function Post({ post, mount, letter }: PostPageProps) {
                 <Styled.TagSection>
                   <Styled.PostTag>
                     <Links
-                      link={`/categories/${post.tag.data.attributes.slug}/1`}
+                      link={`/categories/${post.tag.data.attributes.slug}`}
                     >
                       {post.tag.data.attributes.name}
                     </Links>

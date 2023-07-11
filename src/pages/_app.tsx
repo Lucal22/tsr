@@ -1,11 +1,11 @@
 import { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
-import Header from '../components/Header';
+import Header from '../container/Header';
 import { GlobalStyles } from '../styles/global-styles';
 import light from '../styles/theme/light';
 import dark from '../styles/theme/dark';
 import { useEffect, useState } from 'react';
-import Footer from '../components/Footer';
+import Footer from '../container/Footer';
 import AdBanner from '../components/AdBanner';
 
 function MyApp({ Component, pageProps }: AppProps) {

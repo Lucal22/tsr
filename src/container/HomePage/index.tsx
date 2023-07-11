@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import Container from '../../components/Container';
 import Grid from '../../components/Grid';
-import MainPost from '../../components/MainPost';
+import MainPost from './components/MainPost';
 import * as Styled from './styles';
 import PostCard from '../../components/PostCard';
 import { HomeProps } from '../../pages';

@@ -1,9 +1,9 @@
 import React from 'react';
 import * as Styled from './styles';
-import list from './mock';
-import Links from '../Links';
-import Switch from '../Switch';
-import { HeaderProps } from '../Header';
+import list from './links';
+import Links from '../../../../components/Links';
+import Switch from '../../../../components/Switch';
+import { HeaderProps } from '../..';
 import Menu from '../Menu';
 
 export default function Nav({ handleTheme }: HeaderProps) {

@@ -1,8 +1,8 @@
 import React from 'react';
 import * as Styled from './styles';
-import Links from '../Links';
-import { PostStyleProps } from '../../Types/style';
-import Images from '../Images';
+import Links from '../../../../components/Links';
+import { PostStyleProps } from '../../../../Types/style';
+import Images from '../../../../components/Images';
 
 export type MainPostProps = PostStyleProps & {
   image: string;
@@ -30,7 +30,7 @@ export default function MainPost({
         alt={alt}
       />
       <Styled.Category categorySlug={categorySlug}>
-        <Links link={`/expansions/${categorySlug}/1`}>{category}</Links>
+        <Links link={`/posts`}>{category}</Links>
       </Styled.Category>
       <Styled.Title categorySlug={categorySlug}>
         <Links link={`/posts/${titleSlug}`}>{title}</Links>

@@ -1,10 +1,10 @@
 import React from 'react';
-import Container from '../Container';
-import Links from '../Links';
+import Container from '../../components/Container';
+import Links from '../../components/Links';
 import * as Styled from './styles';
 import { img } from '../../assets';
 import list from './mock';
-import Images from '../Images';
+import Images from '../../components/Images';
 
 //export type FooterProps = {};
 

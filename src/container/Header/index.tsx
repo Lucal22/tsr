@@ -1,9 +1,9 @@
 import React from 'react';
-import Container from '../Container';
+import Container from '../../components/Container';
 import * as Styled from './styles';
 import { img } from '../../assets/index';
-import Nav from '../Nav';
-import Images from '../Images';
+import Nav from './components/Nav';
+import Images from '../../components/Images';
 
 export type HeaderProps = {
   handleTheme: () => void;

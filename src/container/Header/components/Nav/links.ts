@@ -2,12 +2,12 @@ const list = [
   [
     {
       children: 'Posts',
-      link: '/posts/page/',
+      link: '/posts',
       newTab: false,
     },
     {
       children: 'Categorias',
-      link: '/categories/guides/1',
+      link: '/categories',
       newTab: false,
     },
     {
@@ -19,32 +19,32 @@ const list = [
   [
     {
       children: 'Endwalker',
-      link: '/expansions/endwalker/1',
+      link: '/posts',
       newTab: false,
     },
     {
       children: 'Shadowbringers',
-      link: '/expansions/shadowbringers/1',
+      link: '/posts',
       newTab: false,
     },
     {
       children: 'Stormblood',
-      link: '/expansions/stormblood/1',
+      link: '/posts',
       newTab: false,
     },
     {
       children: 'Heavensward',
-      link: '/expansions/heavensward/1',
+      link: '/posts',
       newTab: false,
     },
     {
       children: 'A realm reborn',
-      link: '/expansions/arr/1',
+      link: '/posts',
       newTab: false,
     },
     {
       children: 'Brotinho',
-      link: 'posts/sproutspot/1',
+      link: '/posts',
       newTab: false,
     },
   ],

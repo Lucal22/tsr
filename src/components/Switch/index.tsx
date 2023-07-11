@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import * as Styled from './styles';
 import { SunDim, Moon } from 'phosphor-react';
-import { HeaderProps } from '../Header';
+import { HeaderProps } from '../../container/Header';
 import { ThemeContext } from 'styled-components';
 
 export default function Switch({ handleTheme }: HeaderProps) {
