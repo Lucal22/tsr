@@ -3,7 +3,7 @@ import Container from '../../components/Container';
 import Links from '../../components/Links';
 import * as Styled from './styles';
 import { img } from '../../assets';
-import list from './mock';
+import list from './links';
 import Images from '../../components/Images';
 
 //export type FooterProps = {};
