@@ -8,14 +8,9 @@ import Pagination from '../../components/Pagination';
 
 export default function Posts({
   posts,
-  param,
-  route,
   letter,
   mount,
-  nextPage,
-  previousPage,
-  postsPerPage,
-  numberOfPosts,
+
 }: PageProps) {
   return (
     <Styled.Container>
@@ -24,13 +19,7 @@ export default function Posts({
           <Grid>
             <Styled.Posts>
               <Pagination
-                param={param}
-                route={route}
                 posts={posts}
-                nextPage={nextPage}
-                previousPage={previousPage}
-                postsPerPage={postsPerPage}
-                numberOfPosts={numberOfPosts}
               />
             </Styled.Posts>
             <SideContent mount={mount} letter={letter} />
