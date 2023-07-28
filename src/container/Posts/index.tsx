@@ -6,7 +6,7 @@ import SideContent from '../../components/SideContent';
 import { PageProps } from '../../Types/post';
 import Pagination from '../../components/Pagination';
 
-export default function FilteredPosts({
+export default function Posts({
   posts,
   param,
   route,
