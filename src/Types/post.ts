@@ -53,6 +53,7 @@ export type PostCategory = {
       createdAt: string;
       updatedAt: string;
       slug:
+        | 'dawntrail'
         | 'endwalker'
         | 'shadowbringers'
         | 'stormblood'
@@ -143,12 +144,6 @@ export type SinglePost = {
 
 export type PaginationType = {
   posts: FullPost;
-  param: string;
-  route: string;
-  nextPage: number;
-  previousPage: number;
-  postsPerPage: number;
-  numberOfPosts: number;
 };
 
 export type SideContentTypes = {

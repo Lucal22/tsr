@@ -1,5 +1,6 @@
 export type PostStyleProps = {
   categorySlug:
+    | 'dawntrail'
     | 'endwalker'
     | 'shadowbringers'
     | 'stormblood'
