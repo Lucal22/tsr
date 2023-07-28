@@ -1,6 +1,5 @@
 import React from 'react';
-import Link from 'next/link'
-
+import Link from 'next/link';
 
 export type LinksProps = {
   children: React.ReactNode;
@@ -8,7 +7,11 @@ export type LinksProps = {
   newTab?: boolean;
 };
 
-export default function Links({ children, link = '/', newTab = false }: LinksProps) {
+export default function Links({
+  children,
+  link = '/',
+  newTab = false,
+}: LinksProps) {
   const target = newTab ? '_blank' : '_self';
   return (
     <Link href={link} target={target}>
