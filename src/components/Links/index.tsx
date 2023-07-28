@@ -1,5 +1,6 @@
 import React from 'react';
-import * as Styled from './styles';
+import Link from 'next/link'
+
 
 export type LinksProps = {
   children: React.ReactNode;
@@ -7,11 +8,11 @@ export type LinksProps = {
   newTab?: boolean;
 };
 
-export default function Links({ children, link, newTab = false }: LinksProps) {
+export default function Links({ children, link = '/', newTab = false }: LinksProps) {
   const target = newTab ? '_blank' : '_self';
   return (
-    <Styled.Links href={link} target={target}>
+    <Link href={link} target={target}>
       {children}
-    </Styled.Links>
+    </Link>
   );
 }
