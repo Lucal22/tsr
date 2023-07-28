@@ -14,6 +14,7 @@ const theme = {
     lightBlue: 'rgb(135, 206, 250)',
     green: 'rgb(15, 237, 109)',
     purple: 'rgb(150, 73, 242)',
+    gold: 'rgb(255, 132, 0)',
     menu: '#000000',
   },
   spaces: {
