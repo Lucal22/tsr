@@ -1,6 +1,11 @@
 import { css, DefaultTheme } from 'styled-components';
 
 export const Hover = {
+  dawntrail: (theme: DefaultTheme) => css`
+  &:hover {
+    color: ${theme.colors.gold};
+  }
+  `,
   endwalker: (theme: DefaultTheme) => css`
     &:hover {
       color: ${theme.colors.blue};

@@ -1,6 +1,9 @@
 import { css, DefaultTheme } from 'styled-components';
 
 export const Colors = {
+  dawntrail: (theme: DefaultTheme) => css`
+    color: ${theme.colors.gold};
+  `,
   endwalker: (theme: DefaultTheme) => css`
     color: ${theme.colors.blue};
   `,
