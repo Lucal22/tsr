@@ -18,33 +18,33 @@ const list = [
   ],
   [
     {
+      children: 'Dawntrail',
+      link: '/expansions/dawntrail',
+      newTab: false,
+    },
+    {
       children: 'Endwalker',
-      link: '/posts',
+      link: '/expansions/endwalker',
       newTab: false,
     },
     {
       children: 'Shadowbringers',
-      link: '/posts',
+      link: '/expansions/shadowbringers',
       newTab: false,
     },
     {
       children: 'Stormblood',
-      link: '/posts',
+      link: '/expansions/stormblood',
       newTab: false,
     },
     {
       children: 'Heavensward',
-      link: '/posts',
+      link: '/expansions/heavensward',
       newTab: false,
     },
     {
       children: 'A realm reborn',
-      link: '/posts',
-      newTab: false,
-    },
-    {
-      children: 'Brotinho',
-      link: '/posts',
+      link: '/expansions/arr',
       newTab: false,
     },
   ],
