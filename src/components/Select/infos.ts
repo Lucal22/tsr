@@ -1,5 +1,6 @@
 export const expansions = [
   { expansion: 'Todos', slug: 'all' },
+  { expansion: 'Dawntrail', slug: 'dawntrail' },
   { expansion: 'Endwalker', slug: 'endwalker' },
   { expansion: 'Stormblood', slug: 'stormblood' },
   { expansion: 'Heavensward', slug: 'heavensward' },
