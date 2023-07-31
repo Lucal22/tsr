@@ -144,6 +144,7 @@ export type SinglePost = {
 
 export type PaginationType = {
   posts: FullPost;
+  filter: boolean;
 };
 
 export type SideContentTypes = {
