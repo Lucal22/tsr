@@ -29,7 +29,8 @@ export default function Details({
       font={font}
     >
       Publicado por <Links link={`/authors/${authorSlug}`}>{author}</Links>
-      em <Date date={date} />
+      {' em '}
+      <Date date={date} />
       {addCategory ? (
         <>
           {' | '}
