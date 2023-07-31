@@ -28,12 +28,12 @@ export default function Details({
       categorySlug={categorySlug}
       font={font}
     >
-      Publicado por <Links link={`/authors/${authorSlug}/1`}>{author} </Links>
+      Publicado por <Links link={`/authors/${authorSlug}`}>{author}</Links>
       em <Date date={date} />
       {addCategory ? (
         <>
           {' | '}
-          <Links link={`/expansions/${categorySlug}/1`}> {category}</Links>
+          <Links link={`/expansions/${categorySlug}`}>{category}</Links>
         </>
       ) : null}
     </Styled.Details>
