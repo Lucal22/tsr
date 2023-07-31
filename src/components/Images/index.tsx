@@ -1,4 +1,5 @@
 import Image, { StaticImageData } from 'next/image';
+import styled from 'styled-components';
 import React from 'react';
 import Links from '../Links';
 
@@ -10,10 +11,16 @@ export type ImageProps = {
   height?: string | number;
 };
 
+export const Cursor = styled.div`
+  cursor: pointer;
+`;
+
 export default function Images({ link, src, alt, width, height }: ImageProps) {
   return (
-    <Links link={link}>
-      <Image src={src} alt={alt} width={width} height={height} />
-    </Links>
+    <Cursor>
+      <Links link={link}>
+        <Image src={src} alt={alt} width={width} height={height} />
+      </Links>
+    </Cursor>
   );
 }
