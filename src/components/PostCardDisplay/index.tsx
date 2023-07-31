@@ -5,7 +5,7 @@ import * as Styled from './styles';
 import Select from '../Select';
 import MorePosts from '../MorePosts';
 
-export default function Pagination({ posts }: PaginationType) {
+export default function PostCardDisplay({ posts, filter }: PaginationType) {
   const [tag, setTag] = useState('all');
   const [expansion, setExpansion] = useState('all');
   const [morePosts, setMorePosts] = useState<number>(5);
@@ -26,16 +26,20 @@ export default function Pagination({ posts }: PaginationType) {
         ? filter.attributes.tag.data.attributes.slug == tag
         : filter.attributes.tag.data.attributes.slug),
   );
+
   const len = postArray.length;
 
   const showPosts = postArray.slice(0, morePosts);
 
   return (
     <Styled.Post>
-      <Select
-        handleExpansion={handleExpansion}
-        handleCategory={handleCategory}
-      />
+      {filter ? (
+        <Select
+          handleExpansion={handleExpansion}
+          handleCategory={handleCategory}
+        />
+      ) : null}
+
       {showPosts.map((post) => {
         return (
           <PostCard
