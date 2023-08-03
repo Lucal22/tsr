@@ -16,6 +16,7 @@ export const GRAPHQL_POST_FRAGMENTS = gql`
   fragment tagPostContent on Tag {
     name
     slug
+    description
   }
 
   fragment authorPostCotent on Author {
@@ -35,6 +36,7 @@ export const GRAPHQL_POST_FRAGMENTS = gql`
   fragment categoryPostContent on Category {
     name
     slug
+    description
   }
 
   fragment postContent on PostEntity {
@@ -48,6 +50,7 @@ export const GRAPHQL_POST_FRAGMENTS = gql`
       updatedAt
       author {
         data {
+          id
           attributes {
             ...authorPostCotent
           }
@@ -55,8 +58,12 @@ export const GRAPHQL_POST_FRAGMENTS = gql`
       }
       category {
         data {
+          id
           attributes {
             ...categoryPostContent
+            image {
+              ...image
+            }
           }
         }
       }
@@ -65,6 +72,9 @@ export const GRAPHQL_POST_FRAGMENTS = gql`
           id
           attributes {
             ...tagPostContent
+            image {
+              ...image
+            }
           }
         }
       }
