@@ -17,7 +17,7 @@ export default function AdBanner() {
           src={img.banner}
           width="800px"
           height="300px"
-          alt={''}
+          alt={'banner'}
         />
       </Styled.Banner>
     </Container>
