@@ -22,6 +22,7 @@ export type PostTag = {
     id: PostID;
     attributes: {
       name: string;
+      description: string;
       slug: string;
       image: ImageSimplifiedFormat;
     };
@@ -50,8 +51,10 @@ export type PostCategory = {
     id: PostID;
     attributes: {
       name: string;
+      description: string;
       createdAt: string;
       updatedAt: string;
+      image: ImageSimplifiedFormat;
       slug:
         | 'dawntrail'
         | 'endwalker'
@@ -145,6 +148,7 @@ export type SinglePost = {
 export type PaginationType = {
   posts: FullPost;
   filter: boolean;
+  expansion?: boolean;
 };
 
 export type SideContentTypes = {
