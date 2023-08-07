@@ -6,7 +6,7 @@ import MainPost from './components/MainPost';
 import * as Styled from './styles';
 import { HomeProps } from '../../pages';
 import SideContent from '../../components/SideContent';
-import PostCardDisplay from '../../components/PostCardDisplay';
+import PostCardDisplay from '../Posts/components/PostCardDisplay';
 
 export default function HomePage({
   posts,

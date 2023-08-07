@@ -2,7 +2,7 @@ import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Posts from '../../container/Posts';
-import Skeleton from '../../container/Posts/skeleton';
+import Skeleton from '../../container/Posts/components/skeleton';
 import { loadPosts, RequestResponse } from '../../data/load-posts';
 import { PageProps } from '../../Types/post';
 

@@ -4,7 +4,7 @@ import Grid from '../../components/Grid';
 import * as Styled from './styles';
 import SideContent from '../../components/SideContent';
 import { PageProps } from '../../Types/post';
-import PostCardDisplay from '../../components/PostCardDisplay';
+import PostCardDisplay from './components/PostCardDisplay';
 
 export default function Posts({
   posts,
