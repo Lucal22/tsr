@@ -91,6 +91,6 @@ export const SocialMedias = styled.div`
     }
     @media (min-width: ${theme.screen.size.small}) {
       font-size: ${theme.fonts.size.small};
-    } ;
+    }
   `}
 `;
