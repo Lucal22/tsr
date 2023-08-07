@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-import { PostStyleProps, PostStyleSkeleton } from '../../Types/style';
-import { Colors } from '../../styles/functions/color';
-import { PostHover } from '../../styles/functions/postHover';
+import { PostStyleProps, PostStyleSkeleton } from '../../../../Types/style';
+import { Colors } from '../../../../styles/functions/color';
+import { PostHover } from '../../../../styles/functions/postHover';
 
 export const Container = styled.article<PostStyleProps>`
   ${({ theme, categorySlug }) => css`

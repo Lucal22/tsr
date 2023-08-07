@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { PaginationType } from '../../Types/post';
+import { PaginationType } from '../../../../Types/post';
 import PostCard from '../PostCard';
 import * as Styled from './styles';
-import Select from '../Select';
-import MorePosts from '../MorePosts';
+import Select from '../../../../components/Select';
+import MorePosts from '../../../../components/MorePosts';
 
 export default function PostCardDisplay({ posts, filter }: PaginationType) {
   const [tag, setTag] = useState('all');

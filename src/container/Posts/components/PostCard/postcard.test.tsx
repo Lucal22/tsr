@@ -1,4 +1,4 @@
-import { renderTheme } from '../../utils/renderTheme';
+import { renderTheme } from '../../../../utils/renderTheme';
 import PostCard from './index';
 
 describe('<PostCard />', () => {

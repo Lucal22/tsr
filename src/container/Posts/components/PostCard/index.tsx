@@ -1,8 +1,8 @@
 import React from 'react';
-import { PostStyleProps } from '../../Types/style';
-import Details from '../Details';
-import Images from '../Images';
-import Links from '../Links';
+import { PostStyleProps } from '../../../../Types/style';
+import Details from '../../../../components/Details';
+import Images from '../../../../components/Images';
+import Links from '../../../../components/Links';
 import * as Styled from './styles';
 
 export type PostCardProps = PostStyleProps & {
