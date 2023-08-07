@@ -1,0 +1,9 @@
+import styled, { css } from 'styled-components';
+
+export const Container = styled.div`
+  ${({ theme }) => css`
+    height: 100%;
+    color: ${theme.colors.primary};
+    font-family: ${theme.fonts.style.defaultFont};
+  `}
+`;
