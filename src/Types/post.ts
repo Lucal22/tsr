@@ -17,16 +17,18 @@ export type ImageSimplifiedFormat = {
   };
 };
 
-export type PostTag = {
-  data: {
-    id: PostID;
-    attributes: {
-      name: string;
-      description: string;
-      slug: string;
-      image: ImageSimplifiedFormat;
-    };
+export type Tag = {
+  id: PostID;
+  attributes: {
+    name: string;
+    description: string;
+    slug: string;
+    image: ImageSimplifiedFormat;
   };
+};
+
+export type PostTag = {
+  data: Tag;
 };
 
 export type PostAuthor = {
@@ -46,25 +48,27 @@ export type PostAuthor = {
   };
 };
 
-export type PostCategory = {
-  data: {
-    id: PostID;
-    attributes: {
-      name: string;
-      description: string;
-      createdAt: string;
-      updatedAt: string;
-      image: ImageSimplifiedFormat;
-      slug:
-        | 'dawntrail'
-        | 'endwalker'
-        | 'shadowbringers'
-        | 'stormblood'
-        | 'heavensward'
-        | 'arr'
-        | 'geral';
-    };
+export type Category = {
+  id: PostID;
+  attributes: {
+    name: string;
+    description: string;
+    createdAt: string;
+    updatedAt: string;
+    image: ImageSimplifiedFormat;
+    slug:
+      | 'dawntrail'
+      | 'endwalker'
+      | 'shadowbringers'
+      | 'stormblood'
+      | 'heavensward'
+      | 'arr'
+      | 'geral';
   };
+};
+
+export type PostCategory = {
+  data: Category;
 };
 
 export type PostCreatedBy = {
@@ -147,7 +151,7 @@ export type SinglePost = {
 
 export type PaginationType = {
   posts: FullPost;
-  filter: boolean;
+  filter?: boolean;
   expansion?: boolean;
 };
 
@@ -160,4 +164,8 @@ export type PageProps = PaginationType & SideContentTypes;
 
 export type PostPageTypes = SideContentTypes & {
   posts: FullPost;
+};
+
+export type AttributesType = SideContentTypes & {
+  attributes: Tag[] | Category[];
 };
