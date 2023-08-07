@@ -17,11 +17,24 @@ export const Posts = styled.div`
   flex-direction: column;
 `;
 
+export const Attribute = styled.div`
+  ${({ theme }) => css`
+    border-top: 1px solid ${theme.colors.secondary};
+    border-bottom: 1px solid ${theme.colors.secondary};
+    color: ${theme.colors.details};
+    margin-bottom: 5rem;
+    padding: 1rem 0;
+    h1 {
+      color: ${theme.colors.logo};
+    }
+  `}
+`;
+
 export const Skeleton = styled.div`
   ${({ theme }) => css`
     padding: 2rem 1.5rem;
     @media (min-width: ${theme.screen.size.large}) {
       padding: 0;
-    } ;
+    }
   `}
 `;
