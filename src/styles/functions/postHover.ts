@@ -69,11 +69,11 @@ export const PostHover = {
   `,
   geral: (theme: DefaultTheme) => css`
     &:hover {
-      box-shadow: 0.1rem 0.2rem 0.6rem ${theme.colors.slate500};
+      box-shadow: 0.1rem 0.2rem 0.6rem ${theme.colors.logo};
       bottom: 0.3rem;
       h2 {
         a {
-          color: ${theme.colors.slate500};
+          color: ${theme.colors.logo};
         }
       }
     }

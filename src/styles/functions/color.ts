@@ -20,6 +20,6 @@ export const Colors = {
     color: ${theme.colors.lightBlue};
   `,
   geral: (theme: DefaultTheme) => css`
-    color: ${theme.colors.slate500};
+    color: ${theme.colors.logo};
   `,
 };
