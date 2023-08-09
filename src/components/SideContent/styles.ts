@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const Banners = styled.div`
+export const Banners = styled.aside`
   ${({ theme }) => css`
     display: grid;
     gap: 1rem;
