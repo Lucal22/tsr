@@ -46,7 +46,6 @@ export default function Nav({ handleTheme }: HeaderProps) {
           setIsReady(true);
           setSearch('');
         });
-      console.log('test');
     }, 600);
 
     return () => clearTimeout(inputTimeout.current as number);
