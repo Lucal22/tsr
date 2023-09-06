@@ -4,6 +4,7 @@ export const Header = styled.header`
   ${({ theme }) => css`
     color: ${theme.colors.primary};
     background-color: ${theme.background.details};
+    border-bottom: 1px solid black;
     width: 100%;
     position: fixed;
     z-index: 99;
@@ -22,7 +23,7 @@ export const Flex = styled.div`
     }
     @media (max-width: ${theme.screen.size.xSmall}) {
       padding-left: 30px;
-    } ;
+    }
   `}
 `;
 
