@@ -49,7 +49,7 @@ export const Flex = styled.div<FlexProps>`
     }
     @media (max-width: ${theme.screen.size.xSmall}) {
       gap: ${theme.spaces.medium};
-    } ;
+    }
   `}
 `;
 export const Input = styled.input`
@@ -68,6 +68,6 @@ export const Input = styled.input`
     }
     @media (max-width: ${theme.screen.size.xSmall}) {
       width: 20rem;
-    } ;
+    }
   `}
 `;
