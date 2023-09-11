@@ -18,6 +18,7 @@ export default function AdBanner() {
           width="800px"
           height="300px"
           alt={'banner'}
+          priority={true}
         />
       </Styled.Banner>
     </Container>
