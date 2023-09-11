@@ -20,14 +20,20 @@ export default function Select({
 
   return (
     <Styled.Container>
-      <Styled.Select onChange={(e) => handleExpansionChange(e)}>
+      <Styled.Select
+        name="expansions"
+        onChange={(e) => handleExpansionChange(e)}
+      >
         {expansions.map((item) => (
           <Styled.Option value={item.slug} key={item.slug}>
             {item.expansion}
           </Styled.Option>
         ))}
       </Styled.Select>
-      <Styled.Select onChange={(e) => handleCategoryChange(e)}>
+      <Styled.Select
+        name="categories"
+        onChange={(e) => handleCategoryChange(e)}
+      >
         {categories.map((item) => (
           <Styled.Option value={item.slug} key={item.slug}>
             {item.category}

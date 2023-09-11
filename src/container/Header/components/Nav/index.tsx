@@ -62,6 +62,7 @@ export default function Nav({ handleTheme }: HeaderProps) {
           );
         })}
         <Styled.Input
+          name="search-field"
           type="search"
           placeholder="Pesquise sobre algum post"
           onChange={(e) => setSearch(e.target.value)}
