@@ -6,9 +6,10 @@ import { img } from '../../assets';
 import list from './links';
 import Images from '../../components/Images';
 
-//export type FooterProps = {};
-
 export default function Footer() {
+  const today = new Date();
+  const year = today.getFullYear();
+
   return (
     <Styled.Container>
       <Container width={'large'}>
@@ -19,26 +20,20 @@ export default function Footer() {
           <Styled.About>
             <p>SOBRE</p>
             <Styled.Topics>
-              {list[0].map((item) => {
-                return (
-                  <li key={item.children}>
-                    <Links link={item.link} newTab={item.newTab}>
-                      {item.children}
-                    </Links>
-                  </li>
-                );
-              })}
+              <li>
+                <Links link="/about">O site</Links>
+              </li>
             </Styled.Topics>
           </Styled.About>
           <Styled.Media>
             <p>MEDIA SOCIAIS</p>
             <Styled.Topics>
-              {list[1].map((item) => {
+              {list[0].map((item) => {
                 return (
                   <li key={item.children}>
-                    <Links link={item.link} newTab={item.newTab}>
+                    <a href={item.link} target={'_blank'} rel={'noreferrer'}>
                       {item.children}
-                    </Links>
+                    </a>
                   </li>
                 );
               })}
@@ -47,21 +42,33 @@ export default function Footer() {
           <Styled.Contact>
             <p>CONTATO</p>
             <Styled.Topics>
-              {list[2].map((item) => {
-                return (
-                  <li key={item.children}>
-                    <Links link={item.link} newTab={item.newTab}>
-                      {item.children}
-                    </Links>
-                  </li>
-                );
-              })}
+              <li>
+                <Links link={'/about'}>Parceria</Links>
+              </li>
+              <li>
+                <a
+                  href={'https://discord.gg/Wtfn47aBWW'}
+                  target={'_blank'}
+                  rel={'noreferrer'}
+                >
+                  Discord
+                </a>
+              </li>
             </Styled.Topics>
           </Styled.Contact>
         </Styled.Grid>
         <Styled.Copyright>
-          <p>Copyright</p>
-          <p>{'Feito por Lucal :)'}</p>
+          <p>Copyright © {year}</p>
+          <p>
+            Feito por{' '}
+            <a
+              href={'https://github.com/Lucal22'}
+              target={'_blank'}
+              rel="noreferrer"
+            >
+              Lucal
+            </a>
+          </p>
         </Styled.Copyright>
       </Container>
     </Styled.Container>
